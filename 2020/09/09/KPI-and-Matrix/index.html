@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-X.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-X.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xi XIA's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="General mobile app KPIs User engagement KPIs Revenue KPIs UX KPIs Marketing KPIs App store category ranking  While all six categories are important, you first need to establish the most relevant KPIs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KPI and Matrix">
+<meta property="og:url" content="https://xiaxii.github.io/2020/09/09/KPI-and-Matrix/index.html">
+<meta property="og:site_name" content="Xi XIA&#39;s Blog">
+<meta property="og:description" content="General mobile app KPIs User engagement KPIs Revenue KPIs UX KPIs Marketing KPIs App store category ranking  While all six categories are important, you first need to establish the most relevant KPIs">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2021-06-11T00:39:50.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="KPI and Matrix">
+<meta name="twitter:description" content="General mobile app KPIs User engagement KPIs Revenue KPIs UX KPIs Marketing KPIs App store category ranking  While all six categories are important, you first need to establish the most relevant KPIs">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'CWQ8BGCUZ7',
+      apiKey: 'be2086cbddc646c4027a56c1573319d8',
+      indexName: 'test_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiaxii.github.io/2020/09/09/KPI-and-Matrix/">
+
+
+
+
+
+  <title>KPI and Matrix | Xi XIA's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/xiaxii" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xi XIA's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">notes of study and life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaxii.github.io/2020/09/09/KPI-and-Matrix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xi XIA">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xi XIA's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">KPI and Matrix</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-09T16:15:09-04:00">
+                2020-09-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2021-06-10T20:39:50-04:00">
+                2021-06-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Business/" itemprop="url" rel="index">
+                    <span itemprop="name">Business</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="General-mobile-app-KPIs"><a href="#General-mobile-app-KPIs" class="headerlink" title="General mobile app KPIs"></a>General mobile app KPIs</h1><ul>
+<li>User engagement KPIs</li>
+<li>Revenue KPIs</li>
+<li>UX KPIs</li>
+<li>Marketing KPIs</li>
+<li>App store category ranking</li>
+</ul>
+<p>While all six categories are important, you first need to establish the most relevant KPIs and then focus on tracking them. Below are the top three indicators to look for in each category.</p>
+ <a id="more"></a>
+<h2 id="General-mobile-app-KPIs-1"><a href="#General-mobile-app-KPIs-1" class="headerlink" title="General mobile app KPIs"></a>General mobile app KPIs</h2><p>Most people working on the app development team can track these general mobile KPIs. However, how much emphasis to put on each KPI depends on the product so it may vary from one mobile app to another. These indicators are:</p>
+<h3 id="Mobile-downloads"><a href="#Mobile-downloads" class="headerlink" title="Mobile downloads"></a>Mobile downloads</h3><p>The most obvious measurement of success for an app entrepreneur is the number of downloads over a given period. An example of this would be a million users over a two-year span after launch. This KPI measures the app’s popularity.</p>
+<p>The interpretation of the figures might vary from one product to another. For example, one person may consider attracting a million app users over the course of a year to be a success while others may think that’s too slow. Whatever the case, the number of mobile downloads will point you to the areas for improvements, such as UX, or bigger marketing budgets.</p>
+<h3 id="Subscriptions"><a href="#Subscriptions" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p>If one of the features you offer is content or upgrades subscription, then you should track the number of subscription signups. Unsubscribing helps you monitor the features to be updated or find out about errors that you may not have noticed before. It tells how people find the price/value ratio of the subscription. You can also monitor how long it takes for a person to subscribe after installing your app.</p>
+<h3 id="Upgrades"><a href="#Upgrades" class="headerlink" title="Upgrades"></a>Upgrades</h3><p>If you offer basic and premium versions of your mobile app, then this KPI comes in handy. You need to track the number of people who use the premium version, what percentage of the total they constitute, how long it takes for users to upgrade as well as whether the paid versions get higher ratings than the basic ones. This will help you evaluate whether you have a successful app or not.</p>
+<p>Get a free consultation<br>Would you like to better understand how you can improve the performance of your mobile application? We can set up a quick call with one of our experts who can get you started.We will call you back.<br>Your Name (required)</p>
+<h3 id="Growth-rate"><a href="#Growth-rate" class="headerlink" title="Growth rate"></a>Growth rate</h3><p>You need to know how your base is growing, and whether it is a steady or a spiky growth. For example, does it spike during certain events such as following updates or advertisements, or is the growth slow but steady?</p>
+<h2 id="User-Engagement-KPIs"><a href="#User-Engagement-KPIs" class="headerlink" title="User Engagement KPIs"></a>User Engagement KPIs</h2><p>Another KPI involves measuring engagement. This requires answering questions such as when, how, and where they engage with your product and collect details about it.</p>
+<h3 id="Retention-rate"><a href="#Retention-rate" class="headerlink" title="Retention rate"></a>Retention rate</h3><p>Your retention rate is the number those who return to your app after a specified period. How long does it take for a person to come back? The concept behind this is that if you create a valuable product, people tend to come back to it.</p>
+<p>The monitoring process might help create ideas on how to grow the product. As a general formula, you can calculate the retention rate with the formula below:</p>
+<p>Retention Rate = ((CE — CN) / CS)) X 100</p>
+<p>Where:</p>
+<p>CE = number of customers at the end of a period</p>
+<p>CN = number of new customers acquired during a given period</p>
+<p>CS = number of customers at the beginning of a period</p>
+<h3 id="Sessions-App-Open-Rate"><a href="#Sessions-App-Open-Rate" class="headerlink" title="Sessions (App Open Rate)"></a>Sessions (App Open Rate)</h3><p>Sessions measures how many times someone opened the app and indicates its popularity. Keep in mind that in digital analytics, a session is when a person or device-specific group of interactions that occur within a given period. Of course, it’s important to define what a session means for your app before you start counting.</p>
+<h3 id="Daily-active-users"><a href="#Daily-active-users" class="headerlink" title="Daily active users"></a>Daily active users</h3><p>One of the ways to predict a successful app’s future growth is to calculate the number of daily active users. A DAU is a person who created an account and logged in for any interaction. Web and mobile app businesses typically consider DAU as their primary measure of growth and engagement in successful apps.</p>
+<h3 id="Churn-rate"><a href="#Churn-rate" class="headerlink" title="Churn rate"></a>Churn rate</h3><p>Despite its negative effect, measuring the rate at which people unsubscribe from or uninstall your product will help you improve it. The most common reasons might be the lack of updates or of new content, crash issues as well as general functionality problems. Finding out at what point a person has unsubscribed or uninstalled your app might give you an idea of how to make it better.</p>
+<h2 id="Revenue-KPIs"><a href="#Revenue-KPIs" class="headerlink" title="Revenue KPIs"></a>Revenue KPIs</h2><p>An app is not only built with end-users in mind, but it is also built with money in mind. Therefore, you can measure how your application generates money in the following ways:</p>
+<h3 id="Average-revenue-per-user-ARPU"><a href="#Average-revenue-per-user-ARPU" class="headerlink" title="Average revenue per user (ARPU)"></a>Average revenue per user (ARPU)</h3><p>There are very many forms of monetization such as paid downloads, ad impressions or clicks, in-app purchases as well as subscriptions. The average amount of money or value generated per person multiplied by the size of the total base, could give you a rough idea of your product’s monetary value.</p>
+<h3 id="Customer-acquisition-cost-CAC"><a href="#Customer-acquisition-cost-CAC" class="headerlink" title="Customer acquisition cost (CAC)"></a>Customer acquisition cost (CAC)</h3><p>Customers come at a cost. This might be the cost of advertising, labor as well as other resources. The costs can be determined by dividing the gross revenue by the cost of advertisement and other related costs.</p>
+<h3 id="Customer-lifetime-value-CLC"><a href="#Customer-lifetime-value-CLC" class="headerlink" title="Customer lifetime value (CLC)"></a>Customer lifetime value (CLC)</h3><p>This measures the net profit customers generate, which includes customers in and on the platform in ratio to the cost of acquiring them. The most successful apps tend to have a higher CLC to CAC ratio.</p>
+<p>A general formula for calculating CLC is as follows:</p>
+<p>Avg value of a conversion x avg # of conversions in a time frame x avg customer lifetime.</p>
+<h3 id="Return-on-investment-ROI"><a href="#Return-on-investment-ROI" class="headerlink" title="Return on investment (ROI)"></a>Return on investment (ROI)</h3><p>When you spend money and other resources on the app, such as paid ads you expect to make profits out of it. Therefore, return on investment is measured by dividing the number of gains in customers or revenue that you have generated by how much you have spent on marketing, including the time spent or any other expenses incurred.</p>
+<p>In simple terms:</p>
+<p>(Gain from Investment — Cost of Investment) / Cost of Investment</p>
+<h2 id="UX-KPIs"><a href="#UX-KPIs" class="headerlink" title="UX KPIs"></a>UX KPIs</h2><p>No matter how good you think your app is, the UX wraps it all up. It’s good to remember that you do not create the app for yourself but for other people. Therefore, you should track and measure user experience in order to know the areas that require improvement.</p>
+<p>This can be done by measuring the following elements:</p>
+<h3 id="Load-time"><a href="#Load-time" class="headerlink" title="Load time"></a>Load time</h3><p>Isn’t it annoying when you wait for an app to load? Fast loading speed is key to keeping people’s attention. Some people uninstall an app not because it lacks the features they need, but because they consider it unusable. This is often a symptom of slow loading speeds.</p>
+<p>This includes the transition times from one activity to another within your mobile app. Build the fastest app possible if you want to see app success.</p>
+<h3 id="Devices"><a href="#Devices" class="headerlink" title="Devices"></a>Devices</h3><p>How do people access your app? Which devices do they use: phones, tablets, or laptops? Knowing which devices your customers use to access the app will help you target and improve on the app’s performance.</p>
+<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><p>Your app should be able to work both on Android and iOS. However, if either of them has a high crash rate or high uninstall rate, then you should look into the reasons behind the situation as well as work on a remedy for it.</p>
+<p>A successful mobile app should have a balance between Android and iOS users. If it tends to attract one type over others, you should look into why this is so. This could signal that the experience on one operating system is not performing correctly and you’ll have to fix it.</p>
+<h2 id="Mobile-App-Marketing-KPIs"><a href="#Mobile-App-Marketing-KPIs" class="headerlink" title="Mobile App Marketing KPIs"></a>Mobile App Marketing KPIs</h2><p>There are many effective ways to market your app. Measuring how effective a chosen method is, will help you establish the driving force for the downloads and in result focus on it and maybe get rid of the ones that do not bring in more users.</p>
+<p>You can, therefore, monitor your app store analytics. Some of the best KPIs in this area include:</p>
+<h3 id="Install-source"><a href="#Install-source" class="headerlink" title="Install source"></a>Install source</h3><p>Where did your customers find your app in order to install it? This knowledge is essential and can become a driving force for your campaign. Which sources attract more people to download your app?</p>
+<p>Which sources have better performance and which poor? Are they paid or organic? Such information will allow you to focus on the right marketing strategies.</p>
+<h3 id="Channel-breakdown"><a href="#Channel-breakdown" class="headerlink" title="Channel breakdown"></a>Channel breakdown</h3><p>Channel breakdown involves details concerning the type of channels your customers use to arrive at your mobile app. It involves analyzing their behavior once they start using your app. How do people from a certain channel behave once they land? How does it differ from users who came through other channels? Good mobile apps take this vital data and fold it into the business culture as a whole.</p>
+<h3 id="Geometrics"><a href="#Geometrics" class="headerlink" title="Geometrics"></a>Geometrics</h3><p>Although geometrics is most often ignored, it is important to know your user’s location. It affects the revenues collected from different locations. Analyzing behavior patterns from the different locations will help you understand and specifically focus your sales efforts. You will also know which areas are saturated and are in need of fresh demand-generation ideas.</p>
+<h3 id="Demographics"><a href="#Demographics" class="headerlink" title="Demographics"></a>Demographics</h3><p>Do you know the gender of your target audience? What is their ethnicity and age? By comparing such information to the actual demographics of your customer base will help you analyze the success of your app. If your app was initially targeted for men and you find that a higher percentage of users are female, then it shows that you should re-evaluate your app.</p>
+<h2 id="App-store-category-ranking"><a href="#App-store-category-ranking" class="headerlink" title="App store category ranking"></a>App store category ranking</h2><p>Generally, the higher your rankings in the app store, the better your performance. You should make an effort to monitor and analyze your rankings there. Bear in mind that the category ranking is directly affected by the following elements:</p>
+<h3 id="Keywords"><a href="#Keywords" class="headerlink" title="Keywords"></a>Keywords</h3><p>Tracing how people found your app from the keywords they have typed while searching your app before arriving and downloading your app will shed light on which phrases generate revenue and which don’t.</p>
+<p>The process might even give an idea on which features to update. For example, if someone searched for ‘voice book reader’ then you might provide an update to include voice recognition in your app.</p>
+<h3 id="Reviews"><a href="#Reviews" class="headerlink" title="Reviews"></a>Reviews</h3><p>A customer who takes time to write a review about your app, no matter how long or short it may be, is a sign of being engaged with your app. Note the number of reviews your app has received and what users are saying. Compliments make you feel good about your app also listen to the complaints as they may be more informative.</p>
+<p>Both complaints and positive criticism are key to knowing what to improve or what to include in your app. It will help you get to know the users’ needs. What’s more, it is important not to get discouraged by the extremely negative reviews. For example ‘very useless app.’ with no further comment.</p>
+<h3 id="Ratings"><a href="#Ratings" class="headerlink" title="Ratings"></a>Ratings</h3><p>Just like reviews, the more the ratings you have, the better. However, ratings take less time and effort to fill in, so it does not necessarily show people’s engagement as far as your app goes.</p>
+<p>Sometimes people who rate also write a review. Therefore, it is advisable to check the reviews after the ratings. You might find reasons to introduce premium versions of the app if the ratings are positive, or find a way to bridge the gap if the ratings are poor.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Measuring mobile app success is vital to any mobile app development project. Setting up KPIs and sticking to them will give you a trustworthy base for your app optimization and growth plans. Getting an accurate picture of exactly how your customers use your mobile app will be an invaluable step to continuously delivering valuable, usable tools to your users. If you’d like for one of our experts to take a look at your app, drop us a line and chat with us for a free 15-minute consultation. It can set you on a path toward getting an accurate picture of how successful your app is — and where to improve it to make it even better.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/05/Writing-Efficient-Python-Code/" rel="next" title="Writing Efficient Python Code">
+                <i class="fa fa-chevron-left"></i> Writing Efficient Python Code
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/20/Leadership-Reflections/" rel="prev" title="Leadership Reflections ">
+                Leadership Reflections  <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Xi XIA">
+            
+              <p class="site-author-name" itemprop="name">Xi XIA</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiaxii" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/xiaxii/" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-fab fa-linkedin"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#General-mobile-app-KPIs"><span class="nav-number">1.</span> <span class="nav-text">General mobile app KPIs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-mobile-app-KPIs-1"><span class="nav-number">1.1.</span> <span class="nav-text">General mobile app KPIs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mobile-downloads"><span class="nav-number">1.1.1.</span> <span class="nav-text">Mobile downloads</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subscriptions"><span class="nav-number">1.1.2.</span> <span class="nav-text">Subscriptions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Upgrades"><span class="nav-number">1.1.3.</span> <span class="nav-text">Upgrades</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Growth-rate"><span class="nav-number">1.1.4.</span> <span class="nav-text">Growth rate</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-Engagement-KPIs"><span class="nav-number">1.2.</span> <span class="nav-text">User Engagement KPIs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Retention-rate"><span class="nav-number">1.2.1.</span> <span class="nav-text">Retention rate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sessions-App-Open-Rate"><span class="nav-number">1.2.2.</span> <span class="nav-text">Sessions (App Open Rate)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Daily-active-users"><span class="nav-number">1.2.3.</span> <span class="nav-text">Daily active users</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Churn-rate"><span class="nav-number">1.2.4.</span> <span class="nav-text">Churn rate</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Revenue-KPIs"><span class="nav-number">1.3.</span> <span class="nav-text">Revenue KPIs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Average-revenue-per-user-ARPU"><span class="nav-number">1.3.1.</span> <span class="nav-text">Average revenue per user (ARPU)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Customer-acquisition-cost-CAC"><span class="nav-number">1.3.2.</span> <span class="nav-text">Customer acquisition cost (CAC)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Customer-lifetime-value-CLC"><span class="nav-number">1.3.3.</span> <span class="nav-text">Customer lifetime value (CLC)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Return-on-investment-ROI"><span class="nav-number">1.3.4.</span> <span class="nav-text">Return on investment (ROI)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UX-KPIs"><span class="nav-number">1.4.</span> <span class="nav-text">UX KPIs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Load-time"><span class="nav-number">1.4.1.</span> <span class="nav-text">Load time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Devices"><span class="nav-number">1.4.2.</span> <span class="nav-text">Devices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operating-system"><span class="nav-number">1.4.3.</span> <span class="nav-text">Operating system</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mobile-App-Marketing-KPIs"><span class="nav-number">1.5.</span> <span class="nav-text">Mobile App Marketing KPIs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-source"><span class="nav-number">1.5.1.</span> <span class="nav-text">Install source</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Channel-breakdown"><span class="nav-number">1.5.2.</span> <span class="nav-text">Channel breakdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Geometrics"><span class="nav-number">1.5.3.</span> <span class="nav-text">Geometrics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demographics"><span class="nav-number">1.5.4.</span> <span class="nav-text">Demographics</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-store-category-ranking"><span class="nav-number">1.6.</span> <span class="nav-text">App store category ranking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Keywords"><span class="nav-number">1.6.1.</span> <span class="nav-text">Keywords</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reviews"><span class="nav-number">1.6.2.</span> <span class="nav-text">Reviews</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ratings"><span class="nav-number">1.6.3.</span> <span class="nav-text">Ratings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.7.</span> <span class="nav-text">Conclusion</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xi XIA</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+    <!-- 代码块复制功能 -->
+    <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-X.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-X.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xi XIA's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="3/4 objectives:  estimate risk measures using parametric estimation and historical real-world data.  discover how Monte Carlo simulation can help you predict uncertainty.  learn how the global financi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quantative Risk Management 3&#x2F;4 Estimating and identifying risk">
+<meta property="og:url" content="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-3-4-Estimating-and-identifying-risk/index.html">
+<meta property="og:site_name" content="Xi XIA&#39;s Blog">
+<meta property="og:description" content="3/4 objectives:  estimate risk measures using parametric estimation and historical real-world data.  discover how Monte Carlo simulation can help you predict uncertainty.  learn how the global financi">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/15.%20A%20class%20of%20distributions.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/16.%20Goodness%20of%20fit%20example.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/17.%20Testing%20skewness.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/18.%20Monte%20Carlo%20Simulation%20step1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/19.%20Monte%20Carlo%20Simulation%20step2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/20.%20Monte%20Carlo%20Simulation%20step3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/21.%20China%20population.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/22.%20The%20Chow%20test1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/23.%20The%20Chow%20test2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/24.%20The%20Chow%20test3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/25.%20Crisis%20structural%20break1.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/26.%20Rolling%20window%20volatility.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/27.%20Rolling%20window%20volatility1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/28.%20Rolling%20window%20volatility2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/29.%20Backtesting.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/30.%20Volatility%20and%20structural%20breaks.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/31.%20Extreme%20values%20and%20backtesting.svg">
+<meta property="og:updated_time" content="2021-06-11T00:42:08.019Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quantative Risk Management 3&#x2F;4 Estimating and identifying risk">
+<meta name="twitter:description" content="3/4 objectives:  estimate risk measures using parametric estimation and historical real-world data.  discover how Monte Carlo simulation can help you predict uncertainty.  learn how the global financi">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/15.%20A%20class%20of%20distributions.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'CWQ8BGCUZ7',
+      apiKey: 'be2086cbddc646c4027a56c1573319d8',
+      indexName: 'test_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-3-4-Estimating-and-identifying-risk/">
+
+
+
+
+
+  <title>Quantative Risk Management 3/4 Estimating and identifying risk | Xi XIA's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/xiaxii" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xi XIA's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">notes of study and life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-3-4-Estimating-and-identifying-risk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xi XIA">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xi XIA's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Quantative Risk Management 3/4 Estimating and identifying risk</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-09T19:53:35-05:00">
+                2021-01-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2021-06-10T20:42:08-04:00">
+                2021-06-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Projects/" itemprop="url" rel="index">
+                    <span itemprop="name">Projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>3/4 objectives:</p>
+<ol>
+<li>estimate risk measures using parametric estimation and historical real-world data. </li>
+<li>discover how Monte Carlo simulation can help you predict uncertainty. </li>
+<li>learn how the global financial crisis signaled that randomness itself was changing, by understanding structural breaks and how to identify them.</li>
+</ol>
+<a id="more"></a>
+<h1 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h1><h2 id="A-class-of-distribution"><a href="#A-class-of-distribution" class="headerlink" title="A class of distribution"></a>A class of distribution</h2><p>theta: the vector of unknown <strong>parameters</strong><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/15.%20A%20class%20of%20distributions.png" alt="A class of distribution"></p>
+<h2 id="Fitting-a-distribution"><a href="#Fitting-a-distribution" class="headerlink" title="Fitting a distribution"></a>Fitting a distribution</h2><p>Fit distribution according to error-minimizing criteria</p>
+<ul>
+<li>Example: <code>scipy.stats.norm.fit()</code>, fitting Normal distribution to data</li>
+<li>Result: optimally fitted mean and standard deviation</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Visualize difference between data and estimate using histogram</li>
+<li>Provide goodness-of-fit test</li>
+</ul>
+<h2 id="Goodness-of-fit"><a href="#Goodness-of-fit" class="headerlink" title="Goodness of fit"></a>Goodness of fit</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/16.%20Goodness%20of%20fit%20example.png" alt="Goodness of fit Example"></p>
+<p>norm: too wild<br>t: good, taller’ and ‘narrower’. </p>
+<p>This means that the degrees of freedom of the T distribution, which is the number of independent observations, is estimated to be low. </p>
+<p>Although the T distribution provides a good fit, the data is still not quite right. In particular, the histogram is not symmetrical: it’s a bit lopsided. </p>
+<h2 id="Skewness-（偏度-偏态、偏态系数）"><a href="#Skewness-（偏度-偏态、偏态系数）" class="headerlink" title="Skewness （偏度/偏态、偏态系数）"></a>Skewness （偏度/偏态、偏态系数）</h2><p>Skewness: degree to which data is non-symmetrically distributed<br>是统计数据分布非对称程度的数字特征</p>
+<p>We can test for skewness in the data by seeing how far data are from being symmetric. In Python we test for skewness using ‘skewtest’ from ‘scipy.stats’. The null hypothesis is that there is no skewness, indicating that a symmetric distribution is appropriate. After importing the test, it is applied to the loss data. The results indicate both the test statistic value and its significance level. In our example, a test statistic of -7.78 has a more than 99.9% confidence level, showing that the data has statistically significant skewness. Parametric estimation using a Skewed Normal distribution might then be appropriate.</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/17.%20Testing%20skewness.png" alt="Skewness"></p>
+<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id="Parameter-estimation-Normal"><a href="#Parameter-estimation-Normal" class="headerlink" title="Parameter estimation: Normal"></a>Parameter estimation: Normal</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import the Normal distribution and skewness test from scipy.stats</span></span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> norm, anderson</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fit portfolio losses to the Normal distribution</span></span><br><span class="line">params = norm.fit(losses)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the 95% VaR from the fitted distribution, using parameter estimates</span></span><br><span class="line">VaR_95 = norm.ppf(<span class="number">0.95</span>, *params)</span><br><span class="line">print(<span class="string">"VaR_95, Normal distribution: "</span>, VaR_95)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Test the data for Normality</span></span><br><span class="line">print(<span class="string">"Anderson-Darling test result: "</span>, anderson(losses))</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VaR_95, Normal distribution:  0.07376954007991526</span><br><span class="line">Anderson-Darling test result:  AndersonResult(statistic=30.302775165424237, critical_values=array([0.573, 0.653, 0.783, 0.913, 1.086]), significance_level=array([15. , 10. ,  5. ,  2.5,  1. ]))</span><br></pre></td></tr></table></figure></p>
+<h3 id="Parameter-estimation-Skewed-Normal"><a href="#Parameter-estimation-Skewed-Normal" class="headerlink" title="Parameter estimation: Skewed Normal"></a>Parameter estimation: Skewed Normal</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import the skew-normal distribution and skewness test from scipy.stats</span></span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> skewnorm, skewtest</span><br><span class="line"></span><br><span class="line"><span class="comment"># Test the data for skewness</span></span><br><span class="line">print(<span class="string">"Skewtest result: "</span>, skewtest(losses))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fit the portfolio loss data to the skew-normal distribution</span></span><br><span class="line">params = skewnorm.fit(losses)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the 95% VaR from the fitted distribution, using parameter estimates</span></span><br><span class="line">VaR_95 = skewnorm.ppf(<span class="number">0.95</span>, *params)</span><br><span class="line">print(<span class="string">"VaR_95 from skew-normal: "</span>, VaR_95)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Skewtest result:  SkewtestResult(statistic=-12.561846503056646, pvalue=3.4225103594408506e-36)</span><br><span class="line">VaR_95 from skew-normal:  0.06759217691716421</span><br></pre></td></tr></table></figure></p>
+<h1 id="Historical-and-Monte-Carlo-Simulation"><a href="#Historical-and-Monte-Carlo-Simulation" class="headerlink" title="Historical and Monte Carlo Simulation"></a>Historical and Monte Carlo Simulation</h1><h2 id="Historical-simulation-in-Python"><a href="#Historical-simulation-in-Python" class="headerlink" title="Historical simulation in Python"></a>Historical simulation in Python</h2><p>Historical simulation: use past to predict future</p>
+<p>VaR: start with returns in assets_returns<br>Compute <code>portfolio_returns</code> using portforlio <code>weights</code><br>Convert <code>portfolio_returns</code> into losses<br>VaR: compute <code>np.quantile()</code> for losses at a confidence level<br>Assume future distribution of losses is exactly the same as past (which may not be true)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">weights = [<span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.25</span>]</span><br><span class="line">portfolio_returns = assets_returns.dot(weights)</span><br><span class="line">losses = -portfolio_returns</span><br><span class="line">VaR_95 = np.quantaile(losses, <span class="number">0.95</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Monte-Carlo-Simulation-in-Python"><a href="#Monte-Carlo-Simulation-in-Python" class="headerlink" title="Monte Carlo Simulation in Python"></a>Monte Carlo Simulation in Python</h2><p><strong>Monte Carlo Simulation: A powerful combination of parametric estimation and historical simulation</strong><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/18.%20Monte%20Carlo%20Simulation%20step1.png" alt="step1"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/19.%20Monte%20Carlo%20Simulation%20step2.png" alt="step2"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/20.%20Monte%20Carlo%20Simulation%20step3.png" alt="step3"></p>
+<h2 id="Simulating-asset-returns"><a href="#Simulating-asset-returns" class="headerlink" title="Simulating asset returns"></a>Simulating asset returns</h2><p>A more thorough (and common) approach is to <strong>simulate the returns</strong> for the individual assets in a portfolio, rather than just the portfolio’s total return.<br>This allows greater realism as each risk factor can contribute their own sample path.<br>In addition, risk factors can be <strong>correlated:</strong> the covariance matrix <code>e_cov</code> can be used to compute asset returns in the simulation procedure.</p>
+<h2 id="Exercises-1"><a href="#Exercises-1" class="headerlink" title="Exercises"></a>Exercises</h2><h2 id="Historical-simulation"><a href="#Historical-simulation" class="headerlink" title="Historical simulation"></a>Historical simulation</h2><p>Historical simulation of VaR assumes that the distribution of historical losses is the same as the distribution of future losses. We’ll test if this is true for our investment bank portfolio by comparing the 95% VaR from 2005 - 2006 to the 95% VaR from 2007 - 2009.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create portfolio returns for the two sub-periods using the list of asset returns</span></span><br><span class="line">portfolio_returns = np.array([x.dot(weights) <span class="keyword">for</span> x <span class="keyword">in</span> asset_returns])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Derive portfolio losses from portfolio returns</span></span><br><span class="line">losses = - portfolio_returns</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the historical simulated VaR estimates</span></span><br><span class="line">VaR_95 = [np.quantile(x, <span class="number">0.95</span>) <span class="keyword">for</span> x <span class="keyword">in</span> losses]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Display the VaR estimates</span></span><br><span class="line">print(<span class="string">"VaR_95, 2005-2006: "</span>, VaR_95[<span class="number">0</span>], <span class="string">'; VaR_95, 2007-2009: '</span>, VaR_95[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VaR_95, 2005-2006:  0.014687184472834514 ; VaR_95, 2007-2009:  0.05790574066814192</span><br></pre></td></tr></table></figure></p>
+<h3 id="Monte-Carlo-Simulation"><a href="#Monte-Carlo-Simulation" class="headerlink" title="Monte Carlo Simulation"></a>Monte Carlo Simulation</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Initialize daily cumulative loss for the assets, across N runs</span></span><br><span class="line">daily_loss = np.zeros((<span class="number">4</span>,N))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the Monte Carlo simulations for N runs</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(N):</span><br><span class="line">    <span class="comment"># Compute simulated path of length total_steps for correlated returns</span></span><br><span class="line">    correlated_randomness = e_cov @ norm.rvs(size = (<span class="number">4</span>,total_steps))</span><br><span class="line">    <span class="comment"># Adjust simulated path by total_steps and mean of portfolio losses</span></span><br><span class="line">    steps = <span class="number">1</span>/total_steps</span><br><span class="line">    minute_losses = mu * steps + correlated_randomness * np.sqrt(steps)</span><br><span class="line">    daily_loss[:, n] = minute_losses.sum(axis=<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># Generate the 95% VaR estimate</span></span><br><span class="line">losses = weights @ daily_loss</span><br><span class="line">print(<span class="string">"Monte Carlo VaR_95 estimate: "</span>, np.quantile(losses, <span class="number">0.95</span>))</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Monte Carlo VaR_95 estimate:  0.0032448493079297045</span><br></pre></td></tr></table></figure></p>
+<h1 id="Structural-breaks"><a href="#Structural-breaks" class="headerlink" title="Structural breaks"></a>Structural breaks</h1><p>在计量经济学和统计学中，结构性折断是回归模型参数随时间的意外变化，通常会导致巨大的预测误差和模型的不可靠性。</p>
+<h2 id="Risk-and-distribution"><a href="#Risk-and-distribution" class="headerlink" title="Risk and distribution"></a>Risk and distribution</h2><p>Risk management toolkit:</p>
+<ul>
+<li>Risk mitigation: MPT</li>
+<li>Risk measurement: VaR, CVaR</li>
+</ul>
+<p>Risk: dispersion, volatility</p>
+<ul>
+<li>Variance (standard deviation) as risk definition</li>
+</ul>
+<p>Connection bewteen _risk_ and _<strong>distribution</strong> of risk factors_ as random variables</p>
+<h2 id="Stationarty-平稳性"><a href="#Stationarty-平稳性" class="headerlink" title="Stationarty (平稳性)"></a>Stationarty (平稳性)</h2><p>Assumption: distribution is the same over time<br>Unchanging distribution = stationary<br>Global financial crisis period efficient frontier —&gt; not stationary</p>
+<p>Estimation techniques require <strong>stationarity</strong>:</p>
+<ul>
+<li>Historical: unknown stationary distribution from past data</li>
+<li>Parametric: assumed stationary distribution class</li>
+<li>Monte Carlo: assumed stationary distribution for random draws</li>
+</ul>
+<h2 id="Structural-breaks-1"><a href="#Structural-breaks-1" class="headerlink" title="Structural breaks"></a>Structural breaks</h2><p>If we knew that the distribution was changing over time, and we knew when distribution changes occur, then we could estimate our risk measures only during <strong>sub-periods</strong> when the distribution didn’t change.<br>In other words, distributions would be <strong>stationary only within certain sub-periods of the data</strong>. </p>
+<p>Structural breaks: points of change<br>— change in “trend” of average and/or volatility of data</p>
+<h2 id="Example-China’s-population-growth"><a href="#Example-China’s-population-growth" class="headerlink" title="Example: China’s population growth"></a>Example: China’s population growth</h2><p>As an example of a structural break, let’s examine the population growth rate of China from 1950 to 2019. We can see that the growth is relatively linear over this period…</p>
+<p>…but around 1990 the growth rate slows down. This indicates that there may be a structural break around 1990. </p>
+<p>In other words, the underlying distribution of net population gains (births minus deaths) changed, causing there to be fewer net gains from 1990 onwards. Some reasons for such a change could be changes in government policy, changes in living standards, and other micro- and macro-level factors.</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/21.%20China%20population.png" alt="China Population"></p>
+<h2 id="The-Chow-test"><a href="#The-Chow-test" class="headerlink" title="The Chow test"></a>The Chow test</h2><p>Previous example: A visual examination is useful to identify structural breaks.<br>the “Chow Test”: statistical measurement, which asks if the data support a <strong>structural break</strong> at a given break point of time, for a given <strong>linear risk factor model</strong>. </p>
+<p>Null hypothesis: no structural break. </p>
+<p>In the test, 3 ordinary least squares (OLS) regressions are performed: </p>
+<ol>
+<li>one for the entire period,</li>
+<li>two for before and after the break point.<br>The sum-of-squared residuals are then collected, and the Chow test statistic is created. The statistic is distributed as an “F”-distribution statistic.</li>
+</ol>
+<h2 id="The-Chow-test-in-Python"><a href="#The-Chow-test-in-Python" class="headerlink" title="The Chow test in Python"></a>The Chow test in Python</h2><p>Let’s use the Chow test to see if there was a structural break somewhere around 1990 in China’s population growth. We’ll use a very simple <strong>“factor model”</strong> where log-population is regressed against year. </p>
+<h3 id="Step1-OLS-regression-of-the-whole-period"><a href="#Step1-OLS-regression-of-the-whole-period" class="headerlink" title="Step1: OLS regression of the whole period"></a>Step1: OLS regression of the whole period</h3><p>An OLS regression over the 1950 - 2019 period, regressing the natural logarithm of population against year and an intercept. This gives our ‘baseline’ regression, <strong>assuming no structural break</strong>. The _sum-of-squared residuals（残差平方和）_ from the regression are stored.<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/22.%20The%20Chow%20test1.png" alt></p>
+<h3 id="Step2-Two-OLS-regression-of-two-sub-period"><a href="#Step2-Two-OLS-regression-of-two-sub-period" class="headerlink" title="Step2: Two OLS regression of two sub-period"></a>Step2: Two OLS regression of two sub-period</h3><p>Break 1950-2019 into <strong>1950-1989</strong> and <strong>1990-2019</strong> sub-periods and perform OLS regression on each sub period<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/23.%20The%20Chow%20test2.png" alt><br>*ssr: Sum of squared (whitened) residuals. 残差平方和：它被用作参数选择和模型选择的最优准则。</p>
+<h3 id="Step3-Compute-the-Chow-test-statistic"><a href="#Step3-Compute-the-Chow-test-statistic" class="headerlink" title="Step3: Compute the Chow test statistic"></a>Step3: Compute the Chow test statistic</h3><p>Finally, we compute the Chow test statistic using the three sum of squared residuals and the degrees of freedom of the test. The Chow test statistic should be distributed as an “F” distribution. The “F” distribution has <strong>two degrees of freedom</strong>: </p>
+<ul>
+<li>The first (used in the numerator) is the number of regression parameters, here equal to 2: the intercept and slope coefficient. </li>
+<li>The second (used in the denominator), is the total number of data points, 70, minus twice the first degree of freedom, or 70 minus 4, which is 66.<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/24.%20The%20Chow%20test3.png" alt></li>
+</ul>
+<p>The computed test statistic is statistically different from zero at the 99.9% confidence level. We can reject the null hypothesis that there was no structural break in the data.</p>
+<h2 id="Exercises-2"><a href="#Exercises-2" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id="Crisis-structural-break-I"><a href="#Crisis-structural-break-I" class="headerlink" title="Crisis structural break I"></a>Crisis structural break I</h3><p>Step 1: Investigate whether something “structural” changed between 2005 and 2010.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a plot of quarterly minimum portfolio returns</span></span><br><span class="line">plt.plot(port_q_min, label=<span class="string">"Quarterly minimum return"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a plot of quarterly mean volatility</span></span><br><span class="line">plt.plot(vol_q_mean, label=<span class="string">"Quarterly mean volatility"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create legend and plot</span></span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/25.%20Crisis%20structural%20break1.svg" alt></p>
+<h3 id="Crisis-structural-break-II"><a href="#Crisis-structural-break-II" class="headerlink" title="Crisis structural break II"></a>Crisis structural break II</h3><p>Step 2: Use the richer factor model relationship between portfolio returns and mortgage delinquencies from Chapter 1 to <strong>test for a structural break around 2008</strong>, by computing the <strong>Chow test statistic</strong> for the factor model.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import the statsmodels API to be able to run regressions</span></span><br><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add a constant to the regression</span></span><br><span class="line">mort_del = sm.add_constant(mort_del)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Regress quarterly minimum portfolio returns against mortgage delinquencies</span></span><br><span class="line">result = sm.OLS(port_q_min, mort_del).fit()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Retrieve the sum-of-squared residuals</span></span><br><span class="line">ssr_total = result.ssr</span><br><span class="line">print(<span class="string">"Sum-of-squared residuals, 2005-2010: "</span>, ssr_total)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sum-of-squared residuals, 2005-2010:  0.05039331102490134</span><br></pre></td></tr></table></figure></p>
+<h3 id="Crisis-structural-break-III"><a href="#Crisis-structural-break-III" class="headerlink" title="Crisis structural break III"></a>Crisis structural break III</h3><p>Step 3: put everything together to perform the Chow test.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add intercept constants to each sub-period 'before' and 'after'</span></span><br><span class="line">before_with_intercept = sm.add_constant(before[<span class="string">'mort_del'</span>])</span><br><span class="line">after_with_intercept  = sm.add_constant(after[<span class="string">'mort_del'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Fit OLS regressions to each sub-period</span></span><br><span class="line">r_b = sm.OLS(before[<span class="string">'returns'</span>], before_with_intercept).fit()</span><br><span class="line">r_a = sm.OLS(after[<span class="string">'returns'</span>],  after_with_intercept).fit()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get sum-of-squared residuals for both regressions</span></span><br><span class="line">ssr_before = r_b.ssr</span><br><span class="line">ssr_after = r_a.ssr</span><br><span class="line"><span class="comment"># Compute and display the Chow test statistic</span></span><br><span class="line">numerator = ((ssr_total - (ssr_before + ssr_after)) / <span class="number">2</span>)</span><br><span class="line">denominator = ((ssr_before + ssr_after) / (<span class="number">24</span> - <span class="number">4</span>))</span><br><span class="line">print(<span class="string">"Chow test statistic: "</span>, numerator / denominator)</span><br></pre></td></tr></table></figure></p>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Chow test statistic:  28.93147360547482</span><br></pre></td></tr></table></figure></p>
+<h1 id="Volatility-and-extreme-values"><a href="#Volatility-and-extreme-values" class="headerlink" title="Volatility and extreme values"></a>Volatility and extreme values</h1><h2 id="Structural-break-indications"><a href="#Structural-break-indications" class="headerlink" title="Structural break indications"></a>Structural break indications</h2><ul>
+<li>Visualization of <strong>trend</strong> may not indicate break point</li>
+<li>Alternatively: examine <strong>volatility</strong> rather than trend</li>
+</ul>
+<h2 id="1-Rolling-window-volatility"><a href="#1-Rolling-window-volatility" class="headerlink" title="1. Rolling window volatility"></a>1. Rolling window volatility</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/26.%20Rolling%20window%20volatility.png" alt><br>We can see <strong>if volatility is non-stationary</strong> by constructing a rolling window of losses (or returns) and computing the volatility for each window.<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/27.%20Rolling%20window%20volatility1.png" alt><br>Plotting the resulting volatility series can help identify dates where the volatility appeared to change significantly. These can then be used with the Chow Test to see if one or more structural breaks is supported by the data.<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/28.%20Rolling%20window%20volatility2.png" alt><br>It is sometimes also helpful to visualize changes in volatility, rather than volatility itself. This provides, in addition to possible structural break points, useful information about how the variance has changed over time. </p>
+<h2 id="2-Extreme-values"><a href="#2-Extreme-values" class="headerlink" title="2. Extreme values"></a>2. Extreme values</h2><p>VaR, CVaR: maximum loss, expected shortfall at particular confidence level</p>
+<p>Visualizing changes in maximum loss by plotting VaR?</p>
+<ul>
+<li>Useful for large data sets</li>
+<li>Small data sets: not enough information</li>
+</ul>
+<p>Alternative: find losses exceding some threshold （阀值）<br>Example：VaR95 is the maximum loss in 95% of the time —&gt; 5% of the time, losses can be expected to exceed VaR_95</p>
+<p>Backtesting: use previous data ex-post to see how risk estimate performs<br>—- Used extensively in enterprise risk management</p>
+<h2 id="Backtesting-回测"><a href="#Backtesting-回测" class="headerlink" title="Backtesting (回测)"></a>Backtesting (回测)</h2><p>CVaR for backtesting: accounts for tail better than VaR</p>
+<ul>
+<li>尾端风险/极端风险（Tail Risk）是指统计学上两个极端值可能出现的风险</li>
+<li>肥尾效应（Fat tail）是指极端行情发生的机率增加，可能因为发生一些不寻常的事件<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/29.%20Backtesting.png" alt></li>
+</ul>
+<h2 id="Exercises-3"><a href="#Exercises-3" class="headerlink" title="Exercises:"></a>Exercises:</h2><h3 id="Volatility-and-structural-breaks"><a href="#Volatility-and-structural-breaks" class="headerlink" title="Volatility and structural breaks"></a>Volatility and structural breaks</h3><p>Visualizing volatility changes helps reveal possible structural break points in time series.<br>By identifying when volatility appears to change, an informed choice of break point can be made that can, in turn, be used for further statistical analysis (such as the Chow test).</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Find the time series of returns with and without Citibank</span></span><br><span class="line">ret_with_citi = prices_with_citi.pct_change().dot(weights_with_citi)</span><br><span class="line">ret_without_citi = prices_without_citi.pct_change().dot(weights_without_citi)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the average 30-day rolling window volatility as the standard deviation</span></span><br><span class="line">vol_with_citi = ret_with_citi.rolling(<span class="number">30</span>).std().dropna().rename(<span class="string">"With Citi"</span>)</span><br><span class="line">vol_without_citi = ret_without_citi.rolling(<span class="number">30</span>).std().dropna().rename(<span class="string">"Without Citi"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Combine two volatilities into one Pandas DataFrame</span></span><br><span class="line">vol = pd.concat([vol_with_citi, vol_without_citi], axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot volatilities over time</span></span><br><span class="line">vol.plot().set_ylabel(<span class="string">"Losses"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/30.%20Volatility%20and%20structural%20breaks.svg" alt></p>
+<h2 id="Extreme-values-and-backtesting"><a href="#Extreme-values-and-backtesting" class="headerlink" title="Extreme values and backtesting"></a>Extreme values and backtesting</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Compute the 95% VaR on 2009-2010 losses</span></span><br><span class="line">VaR_95 = np.quantile(estimate_data, <span class="number">0.95</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find backtest_data exceeding the 95% VaR</span></span><br><span class="line">extreme_values = backtest_data[backtest_data &gt; VaR_95]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compare the fraction of extreme values for 2007-2008 to the Var_95 estimate</span></span><br><span class="line">print(<span class="string">"VaR_95: "</span>, VaR_95, <span class="string">"; Backtest: "</span>, len(extreme_values) / len(backtest_data) )</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the extreme values and look for clustering</span></span><br><span class="line">plt.stem(extreme_values.index, extreme_values.values)</span><br><span class="line">plt.ylabel(<span class="string">"Extreme values &gt; VaR_95"</span>); plt.xlabel(<span class="string">"Date"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/31.%20Extreme%20values%20and%20backtesting.svg" alt></p>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VaR_95:  0.04986983664383684 ; Backtest:  0.06547619047619048</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/09/Quantative-Risk-Management-2-4-Goal-oriented-risk-management/" rel="next" title="Quantative Risk Management 2/4 - Goal-oriented risk management">
+                <i class="fa fa-chevron-left"></i> Quantative Risk Management 2/4 - Goal-oriented risk management
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/10/Quantative-Risk-Management-4-4-Advanced-risk-management/" rel="prev" title="Quantative Risk Management 4/4 - Advanced risk management">
+                Quantative Risk Management 4/4 - Advanced risk management <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Xi XIA">
+            
+              <p class="site-author-name" itemprop="name">Xi XIA</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiaxii" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/xiaxii/" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-fab fa-linkedin"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Parameter-Estimation"><span class="nav-number">1.</span> <span class="nav-text">Parameter Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-class-of-distribution"><span class="nav-number">1.1.</span> <span class="nav-text">A class of distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fitting-a-distribution"><span class="nav-number">1.2.</span> <span class="nav-text">Fitting a distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Goodness-of-fit"><span class="nav-number">1.3.</span> <span class="nav-text">Goodness of fit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Skewness-（偏度-偏态、偏态系数）"><span class="nav-number">1.4.</span> <span class="nav-text">Skewness （偏度/偏态、偏态系数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">1.5.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameter-estimation-Normal"><span class="nav-number">1.5.1.</span> <span class="nav-text">Parameter estimation: Normal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameter-estimation-Skewed-Normal"><span class="nav-number">1.5.2.</span> <span class="nav-text">Parameter estimation: Skewed Normal</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Historical-and-Monte-Carlo-Simulation"><span class="nav-number">2.</span> <span class="nav-text">Historical and Monte Carlo Simulation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Historical-simulation-in-Python"><span class="nav-number">2.1.</span> <span class="nav-text">Historical simulation in Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Monte-Carlo-Simulation-in-Python"><span class="nav-number">2.2.</span> <span class="nav-text">Monte Carlo Simulation in Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simulating-asset-returns"><span class="nav-number">2.3.</span> <span class="nav-text">Simulating asset returns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises-1"><span class="nav-number">2.4.</span> <span class="nav-text">Exercises</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Historical-simulation"><span class="nav-number">2.5.</span> <span class="nav-text">Historical simulation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Monte-Carlo-Simulation"><span class="nav-number">2.5.1.</span> <span class="nav-text">Monte Carlo Simulation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Structural-breaks"><span class="nav-number">3.</span> <span class="nav-text">Structural breaks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-and-distribution"><span class="nav-number">3.1.</span> <span class="nav-text">Risk and distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stationarty-平稳性"><span class="nav-number">3.2.</span> <span class="nav-text">Stationarty (平稳性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structural-breaks-1"><span class="nav-number">3.3.</span> <span class="nav-text">Structural breaks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-China’s-population-growth"><span class="nav-number">3.4.</span> <span class="nav-text">Example: China’s population growth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Chow-test"><span class="nav-number">3.5.</span> <span class="nav-text">The Chow test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Chow-test-in-Python"><span class="nav-number">3.6.</span> <span class="nav-text">The Chow test in Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-OLS-regression-of-the-whole-period"><span class="nav-number">3.6.1.</span> <span class="nav-text">Step1: OLS regression of the whole period</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Two-OLS-regression-of-two-sub-period"><span class="nav-number">3.6.2.</span> <span class="nav-text">Step2: Two OLS regression of two sub-period</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Compute-the-Chow-test-statistic"><span class="nav-number">3.6.3.</span> <span class="nav-text">Step3: Compute the Chow test statistic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises-2"><span class="nav-number">3.7.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Crisis-structural-break-I"><span class="nav-number">3.7.1.</span> <span class="nav-text">Crisis structural break I</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crisis-structural-break-II"><span class="nav-number">3.7.2.</span> <span class="nav-text">Crisis structural break II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Crisis-structural-break-III"><span class="nav-number">3.7.3.</span> <span class="nav-text">Crisis structural break III</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Volatility-and-extreme-values"><span class="nav-number">4.</span> <span class="nav-text">Volatility and extreme values</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Structural-break-indications"><span class="nav-number">4.1.</span> <span class="nav-text">Structural break indications</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Rolling-window-volatility"><span class="nav-number">4.2.</span> <span class="nav-text">1. Rolling window volatility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Extreme-values"><span class="nav-number">4.3.</span> <span class="nav-text">2. Extreme values</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backtesting-回测"><span class="nav-number">4.4.</span> <span class="nav-text">Backtesting (回测)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises-3"><span class="nav-number">4.5.</span> <span class="nav-text">Exercises:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Volatility-and-structural-breaks"><span class="nav-number">4.5.1.</span> <span class="nav-text">Volatility and structural breaks</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extreme-values-and-backtesting"><span class="nav-number">4.6.</span> <span class="nav-text">Extreme values and backtesting</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xi XIA</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+    <!-- 代码块复制功能 -->
+    <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

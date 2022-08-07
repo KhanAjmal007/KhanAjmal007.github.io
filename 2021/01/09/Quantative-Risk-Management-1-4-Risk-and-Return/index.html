@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-X.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-X.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xi XIA's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Datacamp: https://campus.datacamp.com/courses/quantitative-risk-management-in-python Course DescriptionManaging risk using Quantitative Risk Management is a vital task across the banking, insurance,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quantative Risk Management 1&#x2F;4 - Risk and Return">
+<meta property="og:url" content="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-1-4-Risk-and-Return/index.html">
+<meta property="og:site_name" content="Xi XIA&#39;s Blog">
+<meta property="og:description" content="Datacamp: https://campus.datacamp.com/courses/quantitative-risk-management-in-python Course DescriptionManaging risk using Quantitative Risk Management is a vital task across the banking, insurance,">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/1.%20closing%20price.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/1.5%20daily%20returns.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/2.%20series%20volatility.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/3.%20visualizing%20risk%20factor%20correlation.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/4.%20efficient%20frontier.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/5.%20PyPortfolioOpt_return.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/6.%20The%20efficient%20frontier.svg">
+<meta property="og:updated_time" content="2021-06-11T00:41:58.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quantative Risk Management 1&#x2F;4 - Risk and Return">
+<meta name="twitter:description" content="Datacamp: https://campus.datacamp.com/courses/quantitative-risk-management-in-python Course DescriptionManaging risk using Quantitative Risk Management is a vital task across the banking, insurance,">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/1.%20closing%20price.svg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'CWQ8BGCUZ7',
+      apiKey: 'be2086cbddc646c4027a56c1573319d8',
+      indexName: 'test_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-1-4-Risk-and-Return/">
+
+
+
+
+
+  <title>Quantative Risk Management 1/4 - Risk and Return | Xi XIA's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/xiaxii" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xi XIA's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">notes of study and life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-1-4-Risk-and-Return/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xi XIA">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xi XIA's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Quantative Risk Management 1/4 - Risk and Return</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-09T02:43:55-05:00">
+                2021-01-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2021-06-10T20:41:58-04:00">
+                2021-06-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Projects/" itemprop="url" rel="index">
+                    <span itemprop="name">Projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><strong>Datacamp:</strong> <a href="https://campus.datacamp.com/courses/quantitative-risk-management-in-python" target="_blank" rel="noopener">https://campus.datacamp.com/courses/quantitative-risk-management-in-python</a></p>
+<p><strong>Course Description</strong><br>Managing risk using Quantitative Risk Management is a vital task across the banking, insurance, and asset management industries. It’s essential that financial risk analysts, regulators, and actuaries can quantitatively balance rewards against their exposure to risk. This course introduces you to financial portfolio risk management through an examination of the 2007—2008 financial crisis and its effect on investment banks such as Goldman Sachs and J.P. Morgan. You’ll learn how to use Python to calculate and mitigate risk exposure using the Value at Risk and Conditional Value at Risk measures, estimate risk with techniques like Monte Carlo simulation, and use cutting-edge technologies such as neural networks to conduct real time portfolio rebalancing.</p>
+</blockquote>
+<p><strong>1/4 Object: </strong></p>
+<ol>
+<li>understanding of risk and return</li>
+<li>how risk and return are related to each other, </li>
+<li>identify risk factors, and use them to re-acquaint ourselves with Modern Portfolio Theory applied to the global financial crisis of 2007-2008.</li>
+</ol>
+<hr>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><ul>
+<li>Quantitative Risk Management: Study of quantifiable <strong>uncertainty</strong></li>
+<li>Uncertainty: (1) Future outcome (2) Outcomes impact planning decisions</li>
+<li>Risk Management: mitigate (reduce effects of) adverse outcomes</li>
+<li>Quantifiable uncertainty: identify <strong>fators to measure risk</strong> (what factors can cause the uncertainty)</li>
+<li>This project: Focus upon risk associated with a <em>financial portfolio</em></li>
+</ul>
+<h2 id="This-project"><a href="#This-project" class="headerlink" title="This project"></a>This project</h2><p><strong>The Great Recession (2007-2010)</strong></p>
+<ul>
+<li>Global growth loss more than $2 trillion</li>
+<li>United States: nearly $10 trillion lost in household wealth</li>
+<li>U.S. stock markets lost c. $8 trillion in value</li>
+</ul>
+<p><strong>Global Finacial Crisis (2007-2009)</strong></p>
+<ul>
+<li>Large-scale changes in fundamental asset values</li>
+<li>Massive uncertainty about future returns</li>
+<li>High asset returns volatility</li>
+<li>Risk management critical to success or failure</li>
+</ul>
+<a id="more"></a>
+<h2 id="Financial-portpolios"><a href="#Financial-portpolios" class="headerlink" title="Financial portpolios"></a>Financial portpolios</h2><ul>
+<li>Collection of assets with uncertain future returns</li>
+<li>Stocks</li>
+<li>Bonds</li>
+<li>Foreign exchange holdings (‘forex’)</li>
+<li>Stock options</li>
+</ul>
+<p>Challenge: Quantify risk to manage uncertainty</p>
+<ul>
+<li>Make optimal investment decisions</li>
+<li>Maximize portfolio return, conditional on risk appetite</li>
+</ul>
+<h2 id="Quantifying-return"><a href="#Quantifying-return" class="headerlink" title="Quantifying return"></a>Quantifying return</h2><p>Portfolio return: weighted sum of individual asset returns</p>
+<ul>
+<li><code>pandas</code> data analysis library</li>
+<li>DataFrame <code>prices</code></li>
+<li><code>.pct_change()</code> method</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prices = pandas.read_csv(<span class="string">"portfolio.csv"</span>)</span><br><span class="line">returns = prices.pct_change()</span><br><span class="line">weights = (weight_1, weight_2, ...)</span><br><span class="line">portfolio_returns = returns.dot(weights)</span><br></pre></td></tr></table></figure>
+<h2 id="Quantifying-risk"><a href="#Quantifying-risk" class="headerlink" title="Quantifying risk"></a>Quantifying risk</h2><ul>
+<li>Portfolio return volatility = risk </li>
+<li>Calculate volatility(波动率) via <strong>covariance matrix</strong>（协方差矩阵）</li>
+<li>Use <code>.cov()</code> DataFrame method of <code>returns</code> and anaualize</li>
+<li><em>Diagonal</em> of <code>covariance</code> is individual assets variances</li>
+<li><em>Off-diagonal</em> of <code>covariance</code> are covariances between assets</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:right">Assets 1</th>
+<th style="text-align:right">Assets 2</th>
+<th style="text-align:right">Assets 3</th>
+<th style="text-align:right">Assets 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Assets 1</td>
+<td style="text-align:right">Diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+</tr>
+<tr>
+<td style="text-align:right">Assets 2</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+</tr>
+<tr>
+<td style="text-align:right">Assets 3</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+</tr>
+<tr>
+<td style="text-align:right">Assets 4</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Off-diagonal</td>
+<td style="text-align:right">Diagonal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">covariance = returns.cov()*<span class="number">252</span></span><br><span class="line"><span class="comment"># 252 is the number of trading days</span></span><br><span class="line">print(covariance)</span><br></pre></td></tr></table></figure>
+<h2 id="Portfolio-risk"><a href="#Portfolio-risk" class="headerlink" title="Portfolio risk"></a>Portfolio risk</h2><p>The portfolio variance is a quadratic function of the <strong>weights</strong> given the covariance matrix, which can be computed in Python using the “At” operator. The variance is usually then transformed into the standard deviation, resulting in the portfolio’s volatility. Both variance and standard deviation are used as measures of volatility.</p>
+<ul>
+<li>Depends upon asset weights in portfolio</li>
+<li>Portfolio variance (方差) = weight矩阵转置 <em> covariance 协方差 </em> weight</li>
+<li>Matrix multiplication can be computed using <code>@</code> operator in python</li>
+<li>Standard deviation (标准差) is usually used instead of variance （方差）,  标准差是方差的平方根</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">weights = [<span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.25</span>]</span><br><span class="line">portfolio_variance = np.transpose(weights) @ covariance @ weights</span><br><span class="line">portfolio_volatility = np.sart(protforlio_variance)</span><br></pre></td></tr></table></figure>
+<h2 id="Volotility-time-series（时间序列）"><a href="#Volotility-time-series（时间序列）" class="headerlink" title="Volotility time series（时间序列）"></a>Volotility time series（时间序列）</h2><ul>
+<li>Can also calculate portfolio volatility over time</li>
+<li>Use a ‘window’ to comput volatiity over a fixed time period (e.g. a week, 30-day ‘month’)</li>
+<li><code>series.rolling()</code> creates a window</li>
+<li>Observe volatility <strong>trend</strong> and possible <strong>extreme</strong> events</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">windowed = portfolio_returns.rolling(<span class="number">30</span>)</span><br><span class="line">volotility = windowed.std()*np.sqrt(<span class="number">252</span>)</span><br><span class="line">volatility.plot().set.ylable(<span class="string">"Standard Deviation, 20-day window"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Excercises"><a href="#Excercises" class="headerlink" title="Excercises"></a>Excercises</h2><p>quantifying the effects of uncertainty on a financial portfolio</p>
+<h3 id="examine-the-portfolio’s-return"><a href="#examine-the-portfolio’s-return" class="headerlink" title="examine the portfolio’s return"></a>examine the portfolio’s return</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Select portfolio asset prices for the middle of the crisis, 2008-2009</span></span><br><span class="line">asset_prices = portfolio.loc[<span class="string">'2008-01-01'</span>:<span class="string">'2009-12-31'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot portfolio's asset prices during this time</span></span><br><span class="line">asset_prices.plot().set_ylabel(<span class="string">"Closing Prices, USD"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/1.%20closing%20price.svg" alt="closing price"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Compute the portfolio&apos;s daily returns</span><br><span class="line">asset_returns = asset_prices.pct_change()</span><br><span class="line">portfolio_returns = asset_returns.dot(weights)</span><br><span class="line"></span><br><span class="line"># Plot portfolio returns</span><br><span class="line">portfolio_returns.plot().set_ylabel(&quot;Daily Return, %&quot;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/1.5%20daily%20returns.svg" alt="daily returns"></p>
+<h3 id="assess-the-riskiness-of-the-portfolio-using-the-covariance-matrix-to-determine-the-portfolio’s-volatility"><a href="#assess-the-riskiness-of-the-portfolio-using-the-covariance-matrix-to-determine-the-portfolio’s-volatility" class="headerlink" title="assess the riskiness of the portfolio using the covariance matrix to determine the portfolio’s volatility"></a>assess the riskiness of the portfolio using the covariance matrix to determine the portfolio’s volatility</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Generate the covariance matrix from portfolio asset&apos;s returns</span><br><span class="line">covariance = asset_returns.cov()</span><br><span class="line"></span><br><span class="line"># Annualize the covariance using 252 trading days per year</span><br><span class="line">covariance = covariance * 252</span><br><span class="line"></span><br><span class="line"># Display the covariance matrix</span><br><span class="line">print(covariance)</span><br><span class="line">                Citibank  Morgan Stanley  Goldman Sachs  J.P. Morgan</span><br><span class="line">Citibank        1.475195        0.821707       0.573790     0.724639</span><br><span class="line">Morgan Stanley  0.821707        1.298341       0.658895     0.560523</span><br><span class="line">Goldman Sachs   0.573790        0.658895       0.500807     0.426979</span><br><span class="line">J.P. Morgan     0.724639        0.560523       0.426979     0.685584</span><br></pre></td></tr></table></figure>
+<p>Q: Which portfolio asset has the highest annualized volatility over the time period 2008 - 2009?<br>A: Citibank<br>(the highest along the diagonal of the covariance matrix.)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Compute and display portfolio volatility for 2008 - 2009</span></span><br><span class="line">portfolio_variance = np.transpose(weights) @ covariance @ weights</span><br><span class="line">portfolio_volatility = np.sqrt(portfolio_variance)</span><br><span class="line">print(portfolio_volatility)</span><br><span class="line"><span class="number">0.8475328513962702</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Calculate the 30-day rolling window of portfolio returns</span></span><br><span class="line">returns_windowed = portfolio_returns.rolling(<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the annualized volatility series</span></span><br><span class="line">volatility_series = returns_windowed.std()*np.sqrt(<span class="number">252</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the portfolio volatility</span></span><br><span class="line">volatility_series.plot().set_ylabel(<span class="string">"Annualized Volatility, 30-day Window"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/2.%20series%20volatility.svg" alt="series volatility"></p>
+<h1 id="Risk-factors-and-financial-crisis"><a href="#Risk-factors-and-financial-crisis" class="headerlink" title="Risk factors and financial crisis"></a>Risk factors and financial crisis</h1><h2 id="Risk-factors"><a href="#Risk-factors" class="headerlink" title="Risk factors"></a>Risk factors</h2><ul>
+<li>Valatility: measure of <strong>dispersion</strong>(离散程度) of resturns around expected value</li>
+<li>Time series: expected value = sample average</li>
+<li>What drives expectation and dispersion?</li>
+<li><strong>Risk factors</strong>: variables or events driving portfolio return and volatility</li>
+</ul>
+<h2 id="Risk-exposure"><a href="#Risk-exposure" class="headerlink" title="Risk exposure"></a>Risk exposure</h2><p><strong>Risk exposure</strong>: meausre of possible portfolio loss<br><strong>Risk factors</strong> determine risk exposure</p>
+<h2 id="Risk-Factors"><a href="#Risk-Factors" class="headerlink" title="Risk Factors"></a>Risk Factors</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type of risk</th>
+<th style="text-align:left">definition</th>
+<th style="text-align:left">example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Systematic risk （系统性风险）</td>
+<td style="text-align:left">affect volatility of all portfolio assets</td>
+<td style="text-align:left">e.g. airplane engine failure</td>
+</tr>
+<tr>
+<td style="text-align:left">Market risk</td>
+<td style="text-align:left">systematic risk from general financial market movements</td>
+<td style="text-align:left">price level changes, i.e. inflation; interest rate changes; Economic climate changes</td>
+</tr>
+<tr>
+<td style="text-align:left">Idiosyncratic risk （特殊风险，非系统性）</td>
+<td style="text-align:left">risk specific to a particular asset/asset class</td>
+<td style="text-align:left">terbulence and the unfastened seatbelt; Bond portfolio: issuer risk of default（违约风险）; Firm/sector characteristics: Firm size （market captalization, 市值）, Book-to-market(股价净值比) issue, Sector shocks (冲击)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Factor-models"><a href="#Factor-models" class="headerlink" title="Factor models"></a>Factor models</h2><p><strong>Factor model</strong>: assessment of risk factors affecting portfolio return<br><strong>Satistical regression</strong> (统计回归)：e.g. Ordinary Least Squares (普通最小二乘法/线性回归)<br>_ dependent variable （因变量）: return (or volatility)</p>
+<ul>
+<li>independent variable （自变量）: systemic and/or idosyncratice risk factors<br><strong>Fama-French factor model</strong>: combination of</li>
+<li>market risk and</li>
+<li>idiosycratic risk (firm size, firm value)</li>
+</ul>
+<h2 id="Crisis-risk-factor-mortgage-backed-securities-（MBS-不动产抵押贷款证券）"><a href="#Crisis-risk-factor-mortgage-backed-securities-（MBS-不动产抵押贷款证券）" class="headerlink" title="Crisis risk factor: mortgage-backed securities （MBS 不动产抵押贷款证券）"></a>Crisis risk factor: mortgage-backed securities （MBS 不动产抵押贷款证券）</h2><p><strong>Investment banks:</strong> borrowed heavily just before the crisis （金融危机前大量发债）<br><strong>Collateral</strong>: mortgage-backed securities<br><strong>MBS</strong>: supposed to siversify risk by holdings</p>
+<ul>
+<li>Flaw: mortgage default risk in fact was highly correlated （违约风险高度相关）</li>
+<li>Avalanche of delinquencies （拖延雪崩）/ default destroyed collateral value(抵押价值被破坏)<br><strong>90-day mortgage delinquency</strong> (90天抵押贷款拖欠): risk factor for investment bank portfolio during the crisis</li>
+</ul>
+<p><strong>Factor model regression</strong>: portfolio returns vs. mortagage delinquency<br>Import <code>statsmodels.api</code> library for regression tools<br>Fit regression using <code>.OLS()</code> object and its <code>.fit()</code> method<br>Display results using regression’s <code>.summary</code> method</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm</span><br><span class="line">regression = sm.OLS(<span class="keyword">return</span>, delinquencies).fit()</span><br><span class="line">print(regression.summary())</span><br></pre></td></tr></table></figure>
+<p>It is the statistical significance of the <strong>regression coefficient</strong> (回归系数) for mortgage delinquencies that concerns us most. </p>
+<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id="Frequency-resampling-primer"><a href="#Frequency-resampling-primer" class="headerlink" title="Frequency resampling primer"></a>Frequency resampling primer</h3><p>Risk factor models often rely upon <strong>data that is of different frequencies</strong>. A typical example is when using quarterly macroeconomic data, such as prices, unemployment rates, etc., with financial data, which is often daily (or even intra-daily). To use both data sources in the same model, higher frequency data needs to be <strong>resampled to match the lower frequency data.</strong></p>
+<p>The <code>DataFrame</code> and <code>Series</code> Pandas objects have a built-in <code>.resample()</code> method that specifies the lower frequency. This method is chained with a method to create the lower-frequency statistic, such as <code>.mean()</code> for the average of the data within the new frequency period, or <code>.min()</code> for the minimum of the data.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Convert daily returns data to weekly and quarterly frequency</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. Convert daily returns to quarterly average returns</span></span><br><span class="line">returns_q = returns.resample(<span class="string">'Q'</span>).mean()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Examine the beginning of the quarterly series</span></span><br><span class="line">print(returns_q.head)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Convert daily returns to weekly minimum returns</span></span><br><span class="line">returns_w = returns.resample(<span class="string">'W'</span>).min()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Examine the beginning of the weekly series</span></span><br><span class="line">print(returns_w.head)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;bound method NDFrame.head of Date</span><br><span class="line">2004-12-31         NaN</span><br><span class="line">2005-03-31   -0.000367</span><br><span class="line">2005-06-30   -0.000366</span><br><span class="line">2005-09-30    0.000615</span><br><span class="line">2005-12-31    0.001323</span><br><span class="line">2006-03-31    0.001384</span><br><span class="line">2006-06-30    0.000084</span><br><span class="line">2006-09-30    0.001654</span><br><span class="line">2006-12-31    0.001717</span><br><span class="line">2007-03-31   -0.000200</span><br><span class="line">2007-06-30    0.000509</span><br><span class="line">2007-09-30   -0.001446</span><br><span class="line">2007-12-31   -0.002300</span><br><span class="line">2008-03-31   -0.002337</span><br><span class="line">2008-06-30   -0.002166</span><br><span class="line">2008-09-30    0.000943</span><br><span class="line">2008-12-31   -0.003480</span><br><span class="line">2009-03-31    0.002415</span><br><span class="line">2009-06-30    0.004946</span><br><span class="line">2009-09-30    0.004516</span><br><span class="line">2009-12-31   -0.001940</span><br><span class="line">2010-03-31    0.001330</span><br><span class="line">2010-06-30   -0.002688</span><br><span class="line">2010-09-30    0.001088</span><br><span class="line">2010-12-31    0.002328</span><br><span class="line">Freq: Q-DEC, dtype: float64&gt;</span><br><span class="line">&lt;bound method NDFrame.head of Date</span><br><span class="line">2005-01-02         NaN</span><br><span class="line">2005-01-09   -0.011152</span><br><span class="line">2005-01-16   -0.007643</span><br><span class="line">2005-01-23   -0.011076</span><br><span class="line">2005-01-30   -0.000443</span><br><span class="line">                ...   </span><br><span class="line">2010-12-05   -0.009894</span><br><span class="line">2010-12-12    0.001379</span><br><span class="line">2010-12-19   -0.016622</span><br><span class="line">2010-12-26   -0.005974</span><br><span class="line">2011-01-02   -0.007729</span><br><span class="line">Freq: W-SUN, Length: 314, dtype: float64&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Visualizing-risk-factor-correlation"><a href="#Visualizing-risk-factor-correlation" class="headerlink" title="Visualizing risk factor correlation"></a>Visualizing risk factor correlation</h3><p>Investment banks heavily invested in mortgage-backed securities (MBS) before and during the financial crisis. This makes MBS a likely risk factor for the investment bank portfolio. </p>
+<p>Assess this using scatterplots between <code>portfolio_returns</code> and an MBS risk measure, the 90-day mortgage delinquency rate <code>mort_del</code>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Transform the daily portfolio_returns into quarterly average returns</span></span><br><span class="line">portfolio_q_average = portfolio_returns.resample(<span class="string">'Q'</span>).mean().dropna()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a scatterplot between delinquency and quarterly average returns</span></span><br><span class="line">plot_average.scatter(mort_del, portfolio_q_average)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Transform daily portfolio_returns returns into quarterly minimum returns</span></span><br><span class="line">portfolio_q_min = portfolio_returns.resample(<span class="string">'Q'</span>).min().dropna()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a scatterplot between delinquency and quarterly minimum returns</span></span><br><span class="line">plot_min.scatter(mort_del, portfolio_q_min)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/3.%20visualizing%20risk%20factor%20correlation.svg" alt="visualize correlation"></p>
+<h3 id="Least-squares-factor-model"><a href="#Least-squares-factor-model" class="headerlink" title="Least-squares factor model"></a>Least-squares factor model</h3><p>As we can see, there is a negative correlation between minimum quarterly returns and mortgage delinquency rates from 2005 - 2010. This can be made more precise with an OLS regression factor model.</p>
+<p>Dependent variables: <strong>average returns</strong>, <strong>minimum returns</strong>, and <strong>average volatility</strong>.<br>Independent variable: <strong>the mortgage delinquency rate</strong>. </p>
+<p>In the regression summary, examine the coefficients’ t-statistic for statistical significance, as well as the overall R-squared for goodness of fit.</p>
+<p>The statsmodels.api library is available as sm.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add a constant to the regression</span></span><br><span class="line">mort_del = sm.add_constant(mort_del)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the regression factor model and fit it to the data</span></span><br><span class="line">results = sm.OLS(port_q_mean, mort_del).fit()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print a summary of the results</span></span><br><span class="line">print(results.summary())</span><br></pre></td></tr></table></figure>
+<p>分别比较三个因变量的回归系数</p>
+<ol>
+<li><code>results = sm.OLS(port_q_mean, mort_del).fit()</code></li>
+<li><code>results = sm.OLS(port_q_min, mort_del).fit()</code></li>
+<li><code>results = sm.OLS(vol_q_mean, mort_del).fit()</code></li>
+</ol>
+<p><code>results = sm.OLS(port_q_mean, mort_del).fit()</code> 结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">                            OLS Regression Results                            </span><br><span class="line">==============================================================================</span><br><span class="line">Dep. Variable:                      y   R-squared:                       0.021</span><br><span class="line">Model:                            OLS   Adj. R-squared:                 -0.023</span><br><span class="line">Method:                 Least Squares   F-statistic:                    0.4801</span><br><span class="line">Date:                Sat, 09 Jan 2021   Prob (F-statistic):              0.496</span><br><span class="line">Time:                        05:15:21   Log-Likelihood:                 113.89</span><br><span class="line">No. Observations:                  24   AIC:                            -223.8</span><br><span class="line">Df Residuals:                      22   BIC:                            -221.4</span><br><span class="line">Df Model:                           1                                         </span><br><span class="line">Covariance Type:            nonrobust                                         </span><br><span class="line">=============================================================================================</span><br><span class="line">                                coef    std err          t      P&gt;|t|      [0.025      0.975]</span><br><span class="line">---------------------------------------------------------------------------------------------</span><br><span class="line">const                        -0.0001      0.001     -0.175      0.862      -0.002       0.002</span><br><span class="line">Mortgage Delinquency Rate     0.0083      0.012      0.693      0.496      -0.016       0.033</span><br><span class="line">==============================================================================</span><br><span class="line">Omnibus:                        0.081   Durbin-Watson:                   1.604</span><br><span class="line">Prob(Omnibus):                  0.960   Jarque-Bera (JB):                0.293</span><br><span class="line">Skew:                          -0.071   Prob(JB):                        0.864</span><br><span class="line">Kurtosis:                       2.477   Cond. No.                         26.7</span><br><span class="line">==============================================================================</span><br><span class="line"></span><br><span class="line">Warnings:</span><br><span class="line">[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</span><br></pre></td></tr></table></figure></p>
+<p><code>results = sm.OLS(port_q_min, mort_del).fit()</code>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">OLS Regression Results                            </span><br><span class="line">==============================================================================</span><br><span class="line">Dep. Variable:                      y   R-squared:                       0.178</span><br><span class="line">Model:                            OLS   Adj. R-squared:                  0.141</span><br><span class="line">Method:                 Least Squares   F-statistic:                     4.761</span><br><span class="line">Date:                Sat, 09 Jan 2021   Prob (F-statistic):             0.0401</span><br><span class="line">Time:                        05:17:56   Log-Likelihood:                 39.937</span><br><span class="line">No. Observations:                  24   AIC:                            -75.87</span><br><span class="line">Df Residuals:                      22   BIC:                            -73.52</span><br><span class="line">Df Model:                           1                                         </span><br><span class="line">Covariance Type:            nonrobust                                         </span><br><span class="line">=============================================================================================</span><br><span class="line">                                coef    std err          t      P&gt;|t|      [0.025      0.975]</span><br><span class="line">---------------------------------------------------------------------------------------------</span><br><span class="line">const                        -0.0279      0.017     -1.611      0.121      -0.064       0.008</span><br><span class="line">Mortgage Delinquency Rate    -0.5664      0.260     -2.182      0.040      -1.105      -0.028</span><br><span class="line">==============================================================================</span><br><span class="line">Omnibus:                       13.525   Durbin-Watson:                   0.513</span><br><span class="line">Prob(Omnibus):                  0.001   Jarque-Bera (JB):               12.333</span><br><span class="line">Skew:                          -1.534   Prob(JB):                      0.00210</span><br><span class="line">Kurtosis:                       4.710   Cond. No.                         26.7</span><br><span class="line">==============================================================================</span><br><span class="line"></span><br><span class="line">Warnings:</span><br><span class="line">[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</span><br></pre></td></tr></table></figure></p>
+<p><code>results = sm.OLS(vol_q_mean, mort_del).fit()</code>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">                            OLS Regression Results                            </span><br><span class="line">==============================================================================</span><br><span class="line">Dep. Variable:                      y   R-squared:                       0.190</span><br><span class="line">Model:                            OLS   Adj. R-squared:                  0.154</span><br><span class="line">Method:                 Least Squares   F-statistic:                     5.174</span><br><span class="line">Date:                Sat, 09 Jan 2021   Prob (F-statistic):             0.0330</span><br><span class="line">Time:                        05:22:24   Log-Likelihood:                 60.015</span><br><span class="line">No. Observations:                  24   AIC:                            -116.0</span><br><span class="line">Df Residuals:                      22   BIC:                            -113.7</span><br><span class="line">Df Model:                           1                                         </span><br><span class="line">Covariance Type:            nonrobust                                         </span><br><span class="line">=============================================================================================</span><br><span class="line">                                coef    std err          t      P&gt;|t|      [0.025      0.975]</span><br><span class="line">---------------------------------------------------------------------------------------------</span><br><span class="line">const                         0.0100      0.007      1.339      0.194      -0.006       0.026</span><br><span class="line">Mortgage Delinquency Rate     0.2558      0.112      2.275      0.033       0.023       0.489</span><br><span class="line">==============================================================================</span><br><span class="line">Omnibus:                       19.324   Durbin-Watson:                   0.517</span><br><span class="line">Prob(Omnibus):                  0.000   Jarque-Bera (JB):               23.053</span><br><span class="line">Skew:                           1.814   Prob(JB):                     9.87e-06</span><br><span class="line">Kurtosis:                       6.145   Cond. No.                         26.7</span><br><span class="line">==============================================================================</span><br><span class="line"></span><br><span class="line">Warnings:</span><br><span class="line">[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</span><br></pre></td></tr></table></figure></p>
+<h1 id="Morden-portforlio-throry"><a href="#Morden-portforlio-throry" class="headerlink" title="Morden portforlio throry"></a>Morden portforlio throry</h1><h2 id="The-risk-return-trade-off"><a href="#The-risk-return-trade-off" class="headerlink" title="The risk-return trade-off"></a>The risk-return trade-off</h2><p>Risk factors: sources of uncertainty affecting return<br>Intuitively(直觉): greater undcertainty (more risk) compensated by greater return<br>Cannot guarantee return: need some meaure of expected return</p>
+<ul>
+<li>average (mean) historical return: proxy for expected future return</li>
+</ul>
+<h2 id="Investor-risk-appetite"><a href="#Investor-risk-appetite" class="headerlink" title="Investor risk appetite"></a>Investor risk appetite</h2><p>Investor survey: minimum return required for given level of risk?<br>Survey response creates (risk. return) risk profile “data point”<br>Vary risk level =&gt; set of (risk, return) points<br>Investor <strong>risk appetite</strong> (风险偏好): defines one quantified relationship between risk and return</p>
+<h2 id="Choosing-portfolio-weights"><a href="#Choosing-portfolio-weights" class="headerlink" title="Choosing portfolio weights"></a>Choosing portfolio weights</h2><p>Vary <strong>portforlio weights</strong> of given portforlio =&gt; creates set of (risk, return) pairs<br>Changing weights = beginning of risk management!<br><strong>Goal</strong>: change weights to maximize expected return, given risk level</p>
+<ul>
+<li>Eyuivalently: minimize risk, given expected return level<br>Changing weights = adjusting investors’ risk exposure</li>
+</ul>
+<h2 id="Morden-portforlio-throry-MPT"><a href="#Morden-portforlio-throry-MPT" class="headerlink" title="Morden portforlio throry (MPT)"></a>Morden portforlio throry (MPT)</h2><p><strong>Efficient portfolio</strong>: portfolio with weights generating <em>highest expected return</em> pf <em>given level of risk</em></p>
+<h2 id="The-efficient-frontier-（有效前沿-效率前沿模型）"><a href="#The-efficient-frontier-（有效前沿-效率前沿模型）" class="headerlink" title="The efficient frontier （有效前沿/效率前沿模型）"></a>The efficient frontier （有效前沿/效率前沿模型）</h2><ul>
+<li>Compute many efficient portfolios for different levels of risk </li>
+<li>Efficient frontier（有效边界）: locus (轨迹) of (risk, return) pairs created by efficient portfolios</li>
+<li>有效边界是在收益—风险约束条件下能够以最小的风险取得最大的收益的各种证券的集合</li>
+<li>处于有效边界上的组合称为有效组合（Efficient Portfolio）</li>
+</ul>
+<p><strong><code>PyPortfolioOpt</code> library:</strong> optimized tools for MPT<br><strong><code>EfficientFrontier</code> class</strong>: generates one optimal portfolio at a time<br><strong>Constrained Line Algorithm (边界算法) class</strong>: generate the entire efficient frontier </p>
+<ul>
+<li>Requires covariance matrix of returns)</li>
+<li>Requires proxy for expected future returns: mean historical returns</li>
+</ul>
+<h2 id="Invesrment-bank-portfolio-2005-2010"><a href="#Invesrment-bank-portfolio-2005-2010" class="headerlink" title="Invesrment bank portfolio 2005-2010"></a>Invesrment bank portfolio 2005-2010</h2><p><strong>Expected returns</strong>: historical data<br><strong>Covariance matrix</strong>: <code>Covariance Shrinkage</code> improved efficiency of estimate<br><strong>Constrained Line Algorithm </strong>object <code>CLA</code><br><strong>Minimum variance portfolio</strong>: <code>cla.min_volatility()</code><br><strong>Efficient frontier</strong>: <code>cla.efficient_frontier()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">expected returns = mean_historical_return(prices)</span><br><span class="line">efficient_cov = CovarianceShrinkage(prices).ledoit_wolf()</span><br><span class="line">cla = CLA(expected_returns, efficient_cov)</span><br><span class="line">minimum_variance = cla,min_volatility()</span><br><span class="line">(ret, vol. weights) = cla.efficient_frontier()</span><br></pre></td></tr></table></figure>
+<h2 id="Visualizing-the-efficient-frontier"><a href="#Visualizing-the-efficient-frontier" class="headerlink" title="Visualizing the efficient frontier"></a>Visualizing the efficient frontier</h2><p>scatter plot of (vol, ret) pairs<br><strong>Minimum variance portfolio</strong> （最小方差投资组合）: smallest volatility of all possible efficient portfolios<br>Increase risk appetite (增加风险承受能力): move along the frontier<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/4.%20efficient%20frontier.png" alt="Efficient frontier"></p>
+<h2 id="Excercises-1"><a href="#Excercises-1" class="headerlink" title="Excercises"></a>Excercises</h2><h3 id="Practice-with-PyPortfolioOpt-returns"><a href="#Practice-with-PyPortfolioOpt-returns" class="headerlink" title="Practice with PyPortfolioOpt: returns"></a>Practice with PyPortfolioOpt: returns</h3><p>Modern Portfolio Theory is the cornerstone of portfolio risk management, because the efficient frontier is a standard method of assessing both investor risk appetite and market risk-return tradeoffs. In this exercise you’ll develop powerful tools to explore a portfolio’s efficient frontier, using the PyPortfolioOpt <code>pypfopt</code> Python library.</p>
+<p>To compute the efficient frontier, both expected returns and the covariance matrix of the portfolio are required.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Load the investment portfolio price data into the price variable.</span></span><br><span class="line">prices = pd.read_csv(<span class="string">"portfolio.csv"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Convert the 'Date' column to a datetime index</span></span><br><span class="line">prices[<span class="string">'Date'</span>] = pd.to_datetime(prices[<span class="string">'Date'</span>], format=<span class="string">'%d/%m/%Y'</span>)</span><br><span class="line">prices.set_index([<span class="string">'Date'</span>], inplace = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Import the mean_historical_return method</span></span><br><span class="line"><span class="keyword">from</span> pypfopt.expected_returns <span class="keyword">import</span> mean_historical_return</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the annualized average historical return</span></span><br><span class="line">mean_returns = mean_historical_return(prices, frequency = <span class="number">252</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the annualized average historical return</span></span><br><span class="line">plt.plot(mean_returns, linestyle = <span class="string">'None'</span>, marker = <span class="string">'o'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/5.%20PyPortfolioOpt_return.svg" alt="PyPortfolioOpt_return"></p>
+<h3 id="Practice-with-PyPortfolioOpt-covariance"><a href="#Practice-with-PyPortfolioOpt-covariance" class="headerlink" title="Practice with PyPortfolioOpt: covariance"></a>Practice with PyPortfolioOpt: covariance</h3><p>Portfolio optimization relies upon an unbiased and efficient estimate of asset covariance. Although sample covariance is unbiased, it is not efficient—extreme events tend to be overweighted.</p>
+<p>One approach to alleviate this is through “covariance shrinkage”, where large errors are reduced (‘shrunk’) to improve efficiency. In this exercise, you’ll use <code>pypfopt.risk_models</code>‘s <code>CovarianceShrinkage</code> object to transform sample covariance into an efficient estimate. The textbook error shrinkage method, <code>.ledoit_wolf()</code>, is a method of this object.</p>
+<p>Asset <code>prices</code> are available in your workspace. Note that although the <code>CovarianceShrinkage</code> object takes <code>prices</code> as input, it actually calculates the covariance matrix of asset <strong>returns</strong>, not prices.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import the CovarianceShrinkage object</span></span><br><span class="line"><span class="keyword">from</span> pypfopt.risk_models <span class="keyword">import</span> CovarianceShrinkage</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the CovarianceShrinkage instance variable</span></span><br><span class="line">cs = CovarianceShrinkage(prices)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the sample covariance matrix of returns</span></span><br><span class="line">sample_cov = prices.pct_change().cov() * <span class="number">252</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the efficient covariance matrix of returns</span></span><br><span class="line">e_cov = cs.ledoit_wolf()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Display both the sample covariance_matrix and the efficient e_cov estimate</span></span><br><span class="line">print(<span class="string">"Sample Covariance Matrix\n"</span>, sample_cov, <span class="string">"\n"</span>)</span><br><span class="line">print(<span class="string">"Efficient Covariance Matrix\n"</span>,e_cov, <span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Sample Covariance Matrix</span><br><span class="line">                 Citibank  Morgan Stanley  Goldman Sachs  J.P. Morgan</span><br><span class="line">Citibank        0.536214        0.305045       0.217993     0.269784</span><br><span class="line">Morgan Stanley  0.305045        0.491993       0.258625     0.218310</span><br><span class="line">Goldman Sachs   0.217993        0.258625       0.217686     0.170937</span><br><span class="line">J.P. Morgan     0.269784        0.218310       0.170937     0.264315 </span><br><span class="line"></span><br><span class="line">Efficient Covariance Matrix</span><br><span class="line">                 Citibank  Morgan Stanley  Goldman Sachs  J.P. Morgan</span><br><span class="line">Citibank        0.527505        0.288782       0.206371     0.255401</span><br><span class="line">Morgan Stanley  0.288782        0.485642       0.244837     0.206671</span><br><span class="line">Goldman Sachs   0.206371        0.244837       0.225959     0.161823</span><br><span class="line">J.P. Morgan     0.255401        0.206671       0.161823     0.270102</span><br></pre></td></tr></table></figure></p>
+<h3 id="Breaking-down-the-financial-crisis"><a href="#Breaking-down-the-financial-crisis" class="headerlink" title="Breaking down the financial crisis"></a>Breaking down the financial crisis</h3><p>n the video you saw the efficient frontier for the portfolio of investment banks over the entire period <strong>2005 - 2010</strong>, which includes time before, during and after the global financial crisis.</p>
+<p>Here you’ll break down this period into three sub-periods, or <code>epochs</code>: <strong>2005-2006</strong> (<em>before</em>), <strong>2007-2008</strong> (<em>during</em>) and <strong>2009-2010</strong> (<em>after</em>). For each period you’ll compute the efficient covariance matrix, and compare them to each other.</p>
+<p>The portfolio’s <code>prices</code> for <strong>2005 - 2010</strong> are available in your workspace, as is the <code>CovarianceShrinkage</code> object from PyPortfolioOpt.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a dictionary of time periods (or 'epochs')</span></span><br><span class="line">epochs = &#123; <span class="string">'before'</span> : &#123;<span class="string">'start'</span>: <span class="string">'1-1-2005'</span>, <span class="string">'end'</span>: <span class="string">'31-12-2006'</span>&#125;,</span><br><span class="line">           <span class="string">'during'</span> : &#123;<span class="string">'start'</span>: <span class="string">'1-1-2007'</span>, <span class="string">'end'</span>: <span class="string">'31-12-2008'</span>&#125;,</span><br><span class="line">           <span class="string">'after'</span>  : &#123;<span class="string">'start'</span>: <span class="string">'1-1-2009'</span>, <span class="string">'end'</span>: <span class="string">'31-12-2010'</span>&#125;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the efficient covariance for each epoch</span></span><br><span class="line">e_cov = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> epochs.keys():</span><br><span class="line">  sub_price = prices.loc[epochs[x][<span class="string">'start'</span>]:epochs[x][<span class="string">'end'</span>]]</span><br><span class="line">  e_cov[x] = CovarianceShrinkage(sub_price).ledoit_wolf()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Display the efficient covariance matrices for all epochs</span></span><br><span class="line">print(<span class="string">"Efficient Covariance Matrices\n"</span>, e_cov)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Efficient Covariance Matrices</span><br><span class="line"> &#123;&apos;before&apos;:                 Citibank  Morgan Stanley  Goldman Sachs  J.P. Morgan</span><br><span class="line">Citibank        0.018149        0.013789       0.013183     0.013523</span><br><span class="line">Morgan Stanley  0.013789        0.043021       0.030559     0.016525</span><br><span class="line">Goldman Sachs   0.013183        0.030559       0.044482     0.018237</span><br><span class="line">J.P. Morgan     0.013523        0.016525       0.018237     0.024182, &apos;during&apos;:                 Citibank  Morgan Stanley  Goldman Sachs  J.P. Morgan</span><br><span class="line">Citibank        0.713035        0.465336       0.323977     0.364848</span><br><span class="line">Morgan Stanley  0.465336        0.994390       0.434874     0.298613</span><br><span class="line">Goldman Sachs   0.323977        0.434874       0.408773     0.224668</span><br><span class="line">J.P. Morgan     0.364848        0.298613       0.224668     0.422516, &apos;after&apos;:                 Citibank  Morgan Stanley  Goldman Sachs  J.P. Morgan</span><br><span class="line">Citibank        0.841156        0.344939       0.252684     0.356788</span><br><span class="line">Morgan Stanley  0.344939        0.388839       0.231624     0.279727</span><br><span class="line">Goldman Sachs   0.252684        0.231624       0.244539     0.223740</span><br><span class="line">J.P. Morgan     0.356788        0.279727       0.223740     0.382494&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="The-efficient-frontier-and-the-financial-crisis"><a href="#The-efficient-frontier-and-the-financial-crisis" class="headerlink" title="The efficient frontier and the financial crisis"></a>The efficient frontier and the financial crisis</h3><p>Previously we examined the covariance matrix of the investment bank portfolio before, during and after the financial crisis. Now we will visualize the changes that took place in the efficient frontier, showing how the crisis created a much higher baseline risk for any given return.</p>
+<p>Using the PyPortfolioOpt <code>pypfopt</code> library’s Critical Line Algorithm (<code>CLA</code>) object, we can derive and visualize the efficient frontier during the crisis period, and add it to a scatterplot already displaying the efficient frontiers before and after the crisis.</p>
+<p>Expected returns <code>returns_during</code> and the efficient covariance matrix <code>ecov_during</code> are available, as is the <code>CLA</code> object from <code>pypfopt</code>. (Remember that DataCamp plots can be expanded to their own window, which can increase readability.)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Initialize the Crtical Line Algorithm object</span></span><br><span class="line">efficient_portfolio_during = CLA(returns_during, ecov_during)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the minimum volatility portfolio weights and display them</span></span><br><span class="line">print(efficient_portfolio_during.min_volatility())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the efficient frontier</span></span><br><span class="line">(ret, vol, weights) = efficient_portfolio_during.efficient_frontier()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add the frontier to the plot showing the 'before' and 'after' frontiers</span></span><br><span class="line">plt.scatter(vol, ret, s = <span class="number">4</span>, c = <span class="string">'g'</span>, marker = <span class="string">'.'</span>, label = <span class="string">'During'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/6.%20The%20efficient%20frontier.svg" alt="The efficient frontier"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/11/26/Data-AI/" rel="next" title="Data & AI">
+                <i class="fa fa-chevron-left"></i> Data & AI
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/09/Quantative-Risk-Management-2-4-Goal-oriented-risk-management/" rel="prev" title="Quantative Risk Management 2/4 - Goal-oriented risk management">
+                Quantative Risk Management 2/4 - Goal-oriented risk management <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Xi XIA">
+            
+              <p class="site-author-name" itemprop="name">Xi XIA</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiaxii" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/xiaxii/" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-fab fa-linkedin"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#This-project"><span class="nav-number">1.1.</span> <span class="nav-text">This project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Financial-portpolios"><span class="nav-number">1.2.</span> <span class="nav-text">Financial portpolios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quantifying-return"><span class="nav-number">1.3.</span> <span class="nav-text">Quantifying return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quantifying-risk"><span class="nav-number">1.4.</span> <span class="nav-text">Quantifying risk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Portfolio-risk"><span class="nav-number">1.5.</span> <span class="nav-text">Portfolio risk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Volotility-time-series（时间序列）"><span class="nav-number">1.6.</span> <span class="nav-text">Volotility time series（时间序列）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excercises"><span class="nav-number">1.7.</span> <span class="nav-text">Excercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#examine-the-portfolio’s-return"><span class="nav-number">1.7.1.</span> <span class="nav-text">examine the portfolio’s return</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assess-the-riskiness-of-the-portfolio-using-the-covariance-matrix-to-determine-the-portfolio’s-volatility"><span class="nav-number">1.7.2.</span> <span class="nav-text">assess the riskiness of the portfolio using the covariance matrix to determine the portfolio’s volatility</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Risk-factors-and-financial-crisis"><span class="nav-number">2.</span> <span class="nav-text">Risk factors and financial crisis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-factors"><span class="nav-number">2.1.</span> <span class="nav-text">Risk factors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-exposure"><span class="nav-number">2.2.</span> <span class="nav-text">Risk exposure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-Factors"><span class="nav-number">2.3.</span> <span class="nav-text">Risk Factors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Factor-models"><span class="nav-number">2.4.</span> <span class="nav-text">Factor models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crisis-risk-factor-mortgage-backed-securities-（MBS-不动产抵押贷款证券）"><span class="nav-number">2.5.</span> <span class="nav-text">Crisis risk factor: mortgage-backed securities （MBS 不动产抵押贷款证券）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">2.6.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Frequency-resampling-primer"><span class="nav-number">2.6.1.</span> <span class="nav-text">Frequency resampling primer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visualizing-risk-factor-correlation"><span class="nav-number">2.6.2.</span> <span class="nav-text">Visualizing risk factor correlation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Least-squares-factor-model"><span class="nav-number">2.6.3.</span> <span class="nav-text">Least-squares factor model</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Morden-portforlio-throry"><span class="nav-number">3.</span> <span class="nav-text">Morden portforlio throry</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-risk-return-trade-off"><span class="nav-number">3.1.</span> <span class="nav-text">The risk-return trade-off</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Investor-risk-appetite"><span class="nav-number">3.2.</span> <span class="nav-text">Investor risk appetite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Choosing-portfolio-weights"><span class="nav-number">3.3.</span> <span class="nav-text">Choosing portfolio weights</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Morden-portforlio-throry-MPT"><span class="nav-number">3.4.</span> <span class="nav-text">Morden portforlio throry (MPT)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-efficient-frontier-（有效前沿-效率前沿模型）"><span class="nav-number">3.5.</span> <span class="nav-text">The efficient frontier （有效前沿/效率前沿模型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Invesrment-bank-portfolio-2005-2010"><span class="nav-number">3.6.</span> <span class="nav-text">Invesrment bank portfolio 2005-2010</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualizing-the-efficient-frontier"><span class="nav-number">3.7.</span> <span class="nav-text">Visualizing the efficient frontier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excercises-1"><span class="nav-number">3.8.</span> <span class="nav-text">Excercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Practice-with-PyPortfolioOpt-returns"><span class="nav-number">3.8.1.</span> <span class="nav-text">Practice with PyPortfolioOpt: returns</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Practice-with-PyPortfolioOpt-covariance"><span class="nav-number">3.8.2.</span> <span class="nav-text">Practice with PyPortfolioOpt: covariance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Breaking-down-the-financial-crisis"><span class="nav-number">3.8.3.</span> <span class="nav-text">Breaking down the financial crisis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-efficient-frontier-and-the-financial-crisis"><span class="nav-number">3.8.4.</span> <span class="nav-text">The efficient frontier and the financial crisis</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xi XIA</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+    <!-- 代码块复制功能 -->
+    <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

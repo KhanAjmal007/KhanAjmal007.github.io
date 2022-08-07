@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-X.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-X.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xi XIA's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="2/4 Object:  expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR) use specialized Python libraries including pandas, scipy, an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quantative Risk Management 2&#x2F;4 - Goal-oriented risk management">
+<meta property="og:url" content="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-2-4-Goal-oriented-risk-management/index.html">
+<meta property="og:site_name" content="Xi XIA&#39;s Blog">
+<meta property="og:description" content="2/4 Object:  expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR) use specialized Python libraries including pandas, scipy, an">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20Loss%20Distribution.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20VaR.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/8.%20CVaR.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/9.%20Visualizing%20VaR.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/10.%20VaR%20for%20the%20Normal%20Distribution.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/11.%20Comparing%20CVaR%20and%20VaR.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/12.%20VaR%20and%20risk%20exposure.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/13.%20VaR%20from%20a%20fitted%20distribution.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/14.%20Options%20pricing%20and%20the%20underlying%20asset.svg">
+<meta property="og:updated_time" content="2021-06-11T00:42:03.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quantative Risk Management 2&#x2F;4 - Goal-oriented risk management">
+<meta name="twitter:description" content="2/4 Object:  expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR) use specialized Python libraries including pandas, scipy, an">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20Loss%20Distribution.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'CWQ8BGCUZ7',
+      apiKey: 'be2086cbddc646c4027a56c1573319d8',
+      indexName: 'test_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-2-4-Goal-oriented-risk-management/">
+
+
+
+
+
+  <title>Quantative Risk Management 2/4 - Goal-oriented risk management | Xi XIA's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/xiaxii" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xi XIA's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">notes of study and life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-2-4-Goal-oriented-risk-management/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xi XIA">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xi XIA's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Quantative Risk Management 2/4 - Goal-oriented risk management</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-09T15:59:14-05:00">
+                2021-01-09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2021-06-10T20:42:03-04:00">
+                2021-06-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Projects/" itemprop="url" rel="index">
+                    <span itemprop="name">Projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>2/4 Object:</strong></p>
+<ol>
+<li>expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR)</li>
+<li>use specialized Python libraries including pandas, scipy, and pypfopt. </li>
+<li>how to mitigate risk exposure using the Black-Scholes model to hedge an options portfolio.</li>
+</ol>
+<a id="more"></a>
+<h1 id="Measuring-Risk"><a href="#Measuring-Risk" class="headerlink" title="Measuring Risk"></a>Measuring Risk</h1><h2 id="The-Loss-Distribution"><a href="#The-Loss-Distribution" class="headerlink" title="The Loss Distribution"></a>The Loss Distribution</h2><p>Forex example:<br>EUR and USD (exchange rate is r)<br>r EUR = 1 USD<br>Loss = EUR 100 x (1-r)<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20Loss%20Distribution.png" alt="Loss Distribution"></p>
+<p>random realization of <strong>r</strong> =&gt; <strong>distribution</strong> of portfolio losses in the future</p>
+<h2 id="Maximum-loss"><a href="#Maximum-loss" class="headerlink" title="Maximum loss"></a>Maximum loss</h2><p>What’s the max loss of a portforlio?<br>Losses cannot be bounded with 100% certainty<br>Confidence level: replace 100% certainty with likelyhood of upper bound<br>Can express questions like “what’s the maximum loss that would take place 95% of the time?”</p>
+<ul>
+<li>here the confidence level is 95%</li>
+</ul>
+<h2 id="Value-at-risk-VaR"><a href="#Value-at-risk-VaR" class="headerlink" title="Value at risk (VaR)"></a>Value at risk (VaR)</h2><p><strong>VaR</strong>（风险价值）: statistic measuring maximum portfolio loss at a particular confidence level </p>
+<p>某一置信度下的最大损失</p>
+<p>Typical confidence levels: 95%, 99%, and 99.5% (usually represented as decimals)</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20VaR.png" alt="VaR"><br>Forex example: </p>
+<h2 id="Conditional-Value-at-Risk-CVaR"><a href="#Conditional-Value-at-Risk-CVaR" class="headerlink" title="Conditional Value at Risk (CVaR)"></a>Conditional Value at Risk (CVaR)</h2><p><strong>CVaR</strong>（条件风险价值）: measures expected loss given a minimum loss equal to the VaR. It equals expected value of the tail of the loss distribution </p>
+<p>VaR的一个问题是他不考虑超过该置信度后的损失情况, 而CVaR表示投资组合的损失超过某个给定VaR值的条件下，该投资组合的平均损失值。</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/8.%20CVaR.png" alt="CVaR"></p>
+<h2 id="Deriving-the-VaR"><a href="#Deriving-the-VaR" class="headerlink" title="Deriving the VaR"></a>Deriving the VaR</h2><ol>
+<li>Specify the confidence level (e.g. 95%, 0.95)</li>
+<li>Creat a Series of <code>loss</code> observations </li>
+<li>Compute <code>loss.quantile()</code> at specified confidence level</li>
+<li>VaR = computed <code>.quantile()</code> at desired confidence level</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loss = pd.Series(observations)</span><br><span class="line">VaR = loss.quantile(<span class="number">0.95</span>)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"VaR_95= "</span>, VaR_95)</span><br></pre></td></tr></table></figure>
+<p>If we know losses are distributed according to a statistical distribution like the Normal distribution, we can also use the “.ppf()”, or percent point function, to find the VaR.</p>
+<p>—&gt; <code>scipy.stats</code> loss distribution: percent point function <code>.ppf()</code> can also be used.</p>
+<h2 id="Deriving-the-CVaR"><a href="#Deriving-the-CVaR" class="headerlink" title="Deriving the CVaR"></a>Deriving the CVaR</h2><ol>
+<li>Specify the confidence level (e.g. 95%, 0.95)</li>
+<li>Creat or use sample from loss distribution</li>
+<li>Compute VaR at a specified confidence level</li>
+<li>Compute CVaR as expected loss (Normal distribution: <code>scipy.stats.norm.expected()</code> does this)</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">losses = pd.Series(scipy.stats.norm.rvs(size = <span class="number">1000</span>)</span><br><span class="line">VaR = scipy.stats.norm.ppf(<span class="number">0</span>,<span class="number">95</span>)</span><br><span class="line">CVaR = (<span class="number">1</span>/(<span class="number">1</span><span class="number">-0.95</span>))*scipy.stats.norm.expect(<span class="keyword">lambda</span> x: x, lb = VaR_95)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"CVaR= "</span>, CVaR)</span><br></pre></td></tr></table></figure>
+<h2 id="Visulizing-the-VaR"><a href="#Visulizing-the-VaR" class="headerlink" title="Visulizing the VaR"></a>Visulizing the VaR</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/9.%20Visualizing%20VaR.png" alt="Visulizing the VaR"><br>*N(mean, variance) stands for normal distribution </p>
+<h2 id="Excercises"><a href="#Excercises" class="headerlink" title="Excercises"></a>Excercises</h2><h3 id="VaR-for-the-Normal-distribution"><a href="#VaR-for-the-Normal-distribution" class="headerlink" title="VaR for the Normal distribution"></a>VaR for the Normal distribution</h3><p>To get accustomed to the Value at Risk (VaR) measure, it helps to apply it to a known distribution. The Normal (or Gaussian) distribution is especially appealing as it 1) has an analytically simple form, and 2) represents a wide variety of empirical phenomena. For this exercise you’ll assume that the loss of a portfolio is normally distributed, i.e., the higher the value drawn from the distribution, the higher the loss.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create the VaR measure at the 95% confidence level using norm.ppf()</span></span><br><span class="line">VaR_95 = norm.ppf(<span class="number">0.95</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the VaR meaasure at the 5% significance level using numpy.quantile()</span></span><br><span class="line">draws = norm.rvs(size = <span class="number">100000</span>)</span><br><span class="line">VaR_99 = np.quantile(draws, <span class="number">0.99</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compare the 95% and 99% VaR</span></span><br><span class="line">print(<span class="string">"95% VaR: "</span>, VaR_95, <span class="string">"; 99% VaR: "</span>, VaR_99)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the normal distribution histogram and 95% VaR measure</span></span><br><span class="line">plt.hist(draws, bins = <span class="number">100</span>)</span><br><span class="line">plt.axvline(x = VaR_95, c=<span class="string">'r'</span>, label = <span class="string">"VaR at 95% Confidence Level"</span>)</span><br><span class="line">plt.legend(); plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/10.%20VaR%20for%20the%20Normal%20Distribution.svg" alt="VaR for the Normal Dirstribution"></p>
+<h3 id="Comparing-CVaR-and-VaR"><a href="#Comparing-CVaR-and-VaR" class="headerlink" title="Comparing CVaR and VaR"></a>Comparing CVaR and VaR</h3><p>The <strong>conditional value at risk</strong> (CVaR), or expected shortfall (ES), asks what the average loss will be, conditional upon losses exceeding some threshold at a certain confidence level. It uses VaR as a point of departure, but contains more information because it takes into consideration the tail of the loss distribution.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Compute the mean and variance of the portfolio returns</span></span><br><span class="line">pm = portfolio_losses.mean()</span><br><span class="line">ps = portfolio_losses.std()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the 95% VaR using the .ppf()</span></span><br><span class="line">VaR_95 = norm.ppf(<span class="number">0.95</span>, loc = pm, scale = ps)</span><br><span class="line"><span class="comment"># Compute the expected tail loss and the CVaR in the worst 5% of cases</span></span><br><span class="line">tail_loss = norm.expect(<span class="keyword">lambda</span> x: x, loc = pm, scale = ps, lb = VaR_95)</span><br><span class="line">CVaR_95 = (<span class="number">1</span> / (<span class="number">1</span> - <span class="number">0.95</span>)) * tail_loss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the normal distribution histogram and add lines for the VaR and CVaR</span></span><br><span class="line">plt.hist(norm.rvs(size = <span class="number">100000</span>, loc = pm, scale = ps), bins = <span class="number">100</span>)</span><br><span class="line">plt.axvline(x = VaR_95, c=<span class="string">'r'</span>, label = <span class="string">"VaR, 95% confidence level"</span>)</span><br><span class="line">plt.axvline(x = CVaR_95, c=<span class="string">'g'</span>, label = <span class="string">"CVaR, worst 5% of outcomes"</span>)</span><br><span class="line">plt.legend(); plt.show()</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/11.%20Comparing%20CVaR%20and%20VaR.svg" alt="Comparing CVaR and VaR"></p>
+<h1 id="Risk-exposure-and-loss"><a href="#Risk-exposure-and-loss" class="headerlink" title="Risk exposure and loss"></a>Risk exposure and loss</h1><h2 id="Deciding-between-options"><a href="#Deciding-between-options" class="headerlink" title="Deciding between options"></a>Deciding between options</h2><ol>
+<li>Chances of negaticve shock: <strong>probability of loss</strong></li>
+<li>Loss associated with shock: amount or conditional amount (e.g. <strong>VaR, CVaR</strong>)</li>
+<li>Desire to avoid shock: <strong>Risk tolerance</strong></li>
+</ol>
+<h2 id="Risk-exposure-and-VaR"><a href="#Risk-exposure-and-VaR" class="headerlink" title="Risk exposure and VaR"></a>Risk exposure and VaR</h2><p>Risk exposure = probability of loss x loss measure<br>Loss measure: e.g. VaR</p>
+<p>loss distribution:<br>normal distribution: good for large number of samples<br>students’ t distribution: good for small number of samples</p>
+<h2 id="Risk-appetite"><a href="#Risk-appetite" class="headerlink" title="Risk appetite"></a>Risk appetite</h2><ul>
+<li>Insurance is a way to pay a fixed value to avoid an uncertain outcome, which is risk-averse behavior.</li>
+</ul>
+<p><strong>risk averse (or risk avoiding) </strong>- if they would accept a certain payment (certainty equivalent) of less than $50 (for example, $40), rather than taking the gamble and possibly receiving nothing.<br><strong>risk neutral</strong> – if they are indifferent between the bet and a certain $50 payment.</p>
+<h2 id="degrees-of-freedom-df"><a href="#degrees-of-freedom-df" class="headerlink" title="degrees of freedom (df)"></a>degrees of freedom (df)</h2><p>number of independent observations</p>
+<ul>
+<li>Small df: “fat tailed” T distribution</li>
+<li>Large df: Normal distribution</li>
+</ul>
+<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id="VaR-and-risk-exposure"><a href="#VaR-and-risk-exposure" class="headerlink" title="VaR and risk exposure"></a>VaR and risk exposure</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import the Student's t-distribution</span></span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> t</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create rolling window parameter list</span></span><br><span class="line">mu = losses.rolling(<span class="number">30</span>).mean()</span><br><span class="line">sigma = losses.rolling(<span class="number">30</span>).std()</span><br><span class="line">rolling_parameters = [(<span class="number">29</span>, mu[i], s) <span class="keyword">for</span> i,s <span class="keyword">in</span> enumerate(sigma)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the 99% VaR array using the rolling window parameters</span></span><br><span class="line">VaR_99 = np.array( [ t.ppf(<span class="number">0.99</span>, *params) </span><br><span class="line">                    <span class="keyword">for</span> params <span class="keyword">in</span> rolling_parameters ] )</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the minimum risk exposure over the 2005-2010 time period</span></span><br><span class="line">plt.plot(losses.index, <span class="number">0.01</span> * VaR_99 * <span class="number">100000</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/12.%20VaR%20and%20risk%20exposure.svg" alt="VaR and risk exposure"></p>
+<h3 id="CVaR-and-risk-exposure"><a href="#CVaR-and-risk-exposure" class="headerlink" title="CVaR and risk exposure"></a>CVaR and risk exposure</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fit the Student's t distribution to crisis losses</span></span><br><span class="line">p = t.fit(crisis_losses)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the VaR_99 for the fitted distribution</span></span><br><span class="line">VaR_99 = t.ppf(<span class="number">0.99</span>, *p)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use the fitted parameters and VaR_99 to compute CVaR_99</span></span><br><span class="line">tail_loss = t.expect(<span class="keyword">lambda</span> y: y, args = (p[<span class="number">0</span>],), loc = p[<span class="number">1</span>], scale = p[<span class="number">2</span>], lb = VaR_99 )</span><br><span class="line">CVaR_99 = (<span class="number">1</span> / (<span class="number">1</span> - <span class="number">0.99</span>)) * tail_loss</span><br><span class="line">print(CVaR_99)</span><br></pre></td></tr></table></figure>
+<p>结果为<code>0.3380538488604617</code></p>
+<h1 id="Risk-management-with-VaR-and-CVaR"><a href="#Risk-management-with-VaR-and-CVaR" class="headerlink" title="Risk management with VaR and CVaR"></a>Risk management with VaR and CVaR</h1><h2 id="Incorporating-VaR-into-MPT"><a href="#Incorporating-VaR-into-MPT" class="headerlink" title="Incorporating VaR into MPT"></a>Incorporating VaR into MPT</h2><p>Mordern Portfolio Theory (MPT): “mean-variance” optimization</p>
+<ul>
+<li>Highest expected return</li>
+<li>Risk level (volatility) is given</li>
+<li>Objective function: expected return</li>
+</ul>
+<p>VaR/CVaR: measure risk over distribution of loss</p>
+<p>Adapt MPT to optimize over loss distribution vs. expected return</p>
+<h2 id="A-new-objective-minimize-CVaR"><a href="#A-new-objective-minimize-CVaR" class="headerlink" title="A new objective: minimize CVaR"></a>A new objective: minimize CVaR</h2><p>change objective of portfolio optimization</p>
+<ul>
+<li>mean-variance objective: maximize expected mean return</li>
+<li>CVaR objective: minimize expected conditional loss at a given confidence level<br>—&gt; Optimization: portfolio weights minimizing CVaR<br>—&gt; find the lowest expected loss in worst (1-confidence) of possible outcomes<br>在给定的置信度下，可能出现的结果中，达到最低的损失</li>
+</ul>
+<h2 id="CVaR-minimization-using-PyPortfolioOpt"><a href="#CVaR-minimization-using-PyPortfolioOpt" class="headerlink" title="CVaR minimization using PyPortfolioOpt"></a>CVaR minimization using PyPortfolioOpt</h2><ol>
+<li>Create an <code>EfficientFrontier</code> object with an efficient covariance matrix <code>e_cov</code></li>
+<li>Import built-in objective function that minimizes CVaR, <code>negative_cvar()</code> from <code>pypopt.objective_functions</code> module</li>
+<li>Comput optimal portfolio weights using <code>.custom_objective()</code> method<br>(Arguements of <code>.negative_cvar()</code> added to <code>.custom_objective</code>).</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ef = pypopt.objective_frontier.EfficientFrontier(<span class="literal">None</span>, e_cov)</span><br><span class="line"><span class="keyword">from</span> pypopt.objective_functions <span class="keyword">import</span> negative_cvar</span><br><span class="line">optimal_weights = ef.custom_objective(negative_cvar, returns)</span><br></pre></td></tr></table></figure>
+<h2 id="Negative-CVaR"><a href="#Negative-CVaR" class="headerlink" title="Negative CVaR?"></a>Negative CVaR?</h2><p>Seek minimum CVaR portfolio at given significance level 1-alpha<br><strong>Same as</strong> finding portfolio that maximizes returns in worst 1-alpha cases</p>
+<p>Question: expect objective function to return positive number, or negative?</p>
+<p>Optimization can be either:</p>
+<ul>
+<li>maximize someting or </li>
+<li>minimize the <strong>negative</strong> of someting</li>
+</ul>
+<p>PyPortfolioOpt solver: <strong>minimizes</strong> by default</p>
+<ul>
+<li>so objective function needs to be negative of CVaR <strong>returns</strong></li>
+<li>Give same answer as minimizing CVaR <strong>losses</strong></li>
+</ul>
+<p>Term “negative CVaR” is a misnormer: CVaR is an expected <strong>loss </strong></p>
+<h2 id="Mean-variance-vs-CVaR-risk-management"><a href="#Mean-variance-vs-CVaR-risk-management" class="headerlink" title="Mean-variance vs. CVaR risk management"></a>Mean-variance vs. CVaR risk management</h2><p>Mean-variance risk management: minimize <strong>volatility</strong> </p>
+<ul>
+<li>We compute the minimum volatility portfolio weights in the usual fashion, by creating an EfficientFrontier instance and using the ‘min volatility’ method.<br>CVaR risk management: minimize <strong>negative CVaR</strong></li>
+<li>The CVaR-minimizing portfolio is created using the ‘custom objective’ and ‘negative cvar’ methods. The result is a roughly equally-weighted portfolio. </li>
+<li>This creates more volatility than the minimum volatility mean-variance portfolio, but with the benefit that the worst 5% cases of loss are minimized.</li>
+</ul>
+<h2 id="Excercies"><a href="#Excercies" class="headerlink" title="Excercies"></a>Excercies</h2><h2 id="VaR-from-a-fitted-distribution"><a href="#VaR-from-a-fitted-distribution" class="headerlink" title="VaR from a fitted distribution"></a>VaR from a fitted distribution</h2><p>Minimizing CVaR requires calculating the VaR at a confidence level, say 95%. Previously you derived the VaR as a quantile from a Normal (or Gaussian) distribution, but minimizing the CVaR more generally requires computing the quantile from a distribution that best <strong>fits</strong> the data.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Visualize the fitted distribution with a plot</span></span><br><span class="line">x = np.linspace(<span class="number">-0.25</span>,<span class="number">0.25</span>,<span class="number">1000</span>)</span><br><span class="line">plt.plot(x,fitted.evaluate(x))</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a random sample of 100,000 observations from the fitted distribution</span></span><br><span class="line">sample = fitted.resample(<span class="number">100000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute and display the 95% VaR from the random sample</span></span><br><span class="line">VaR_95 = np.quantile(sample, <span class="number">0.95</span>)</span><br><span class="line">print(VaR_95)</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/13.%20VaR%20from%20a%20fitted%20distribution.svg" alt="VaR from a fitted distribution"></p>
+<h3 id="Minimizing-CVaR"><a href="#Minimizing-CVaR" class="headerlink" title="Minimizing CVaR"></a>Minimizing CVaR</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import the EfficientFrontier class</span></span><br><span class="line"><span class="keyword">from</span> pypfopt.efficient_frontier <span class="keyword">import</span> EfficientFrontier</span><br><span class="line"></span><br><span class="line"><span class="comment"># Import the negative_cvar objective function</span></span><br><span class="line"><span class="keyword">from</span> pypfopt.objective_functions <span class="keyword">import</span> negative_cvar</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the efficient frontier instance</span></span><br><span class="line">ef = EfficientFrontier(<span class="literal">None</span>, e_cov)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the cVar-minimizing portfolio weights at the default 95% confidence level</span></span><br><span class="line">optimal_weights = ef.custom_objective(negative_cvar, returns)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Display the optimal weights</span></span><br><span class="line">print(optimal_weights)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;Citibank&apos;: 0.24991481239515553, &apos;Morgan Stanley&apos;: 0.2497894497565988, &apos;Goldman Sachs&apos;: 0.25013519444333526, &apos;J.P. Morgan&apos;: 0.2501605434049105&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="CVaR-risk-management-and-the-crisis"><a href="#CVaR-risk-management-and-the-crisis" class="headerlink" title="CVaR risk management and the crisis"></a>CVaR risk management and the crisis</h3><p>Derive the 95% CVaR-minimizing portfolio for 2005-2006, 2007-2008, and 2009-2010.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Initialize the dictionary of optimal weights</span></span><br><span class="line">optimal_weights_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find and display the CVaR-minimizing portfolio weights at the default 95% confidence level</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="string">'before'</span>, <span class="string">'during'</span>, <span class="string">'after'</span>]:</span><br><span class="line">    optimal_weights_dict[x] = ef_dict[x].custom_objective(negative_cvar, returns_dict[x])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compare the CVaR-minimizing weights to the minimum volatility weights for the 'before' epoch</span></span><br><span class="line">print(<span class="string">"CVaR:\n"</span>, pd.DataFrame.from_dict(optimal_weights_dict[<span class="string">'before'</span>]), <span class="string">"\n"</span>)</span><br><span class="line">print(<span class="string">"Min Vol:\n"</span>, pd.DataFrame.from_dict(min_vol_dict[<span class="string">'before'</span>]), <span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CVaR:</span><br><span class="line">                   Weight</span><br><span class="line">Citibank        0.248754</span><br><span class="line">Morgan Stanley  0.249111</span><br><span class="line">Goldman Sachs   0.250973</span><br><span class="line">J.P. Morgan     0.251162 </span><br><span class="line"></span><br><span class="line">Min Vol:</span><br><span class="line">                   Weight</span><br><span class="line">Citibank        0.655621</span><br><span class="line">Morgan Stanley  0.059033</span><br><span class="line">Goldman Sachs   0.029725</span><br><span class="line">J.P. Morgan     0.255621</span><br></pre></td></tr></table></figure></p>
+<h1 id="Portfolio-hedging-offsetting-risk"><a href="#Portfolio-hedging-offsetting-risk" class="headerlink" title="Portfolio hedging: offsetting risk"></a>Portfolio hedging: offsetting risk</h1><h2 id="Portfolio-statbility"><a href="#Portfolio-statbility" class="headerlink" title="Portfolio statbility"></a>Portfolio statbility</h2><p>VaR/CVaR: potential portfolio loss for given confidence level<br>Portfolio optimization: “best” portfolio weights</p>
+<ul>
+<li>But volatility is still presents!<br>Institutional investors: stability of portforlio against volatile changes</li>
+<li>pension funds: c. USD 20 trillion</li>
+</ul>
+<h2 id="Example-raning-days-and-sunny-days"><a href="#Example-raning-days-and-sunny-days" class="headerlink" title="Example: raning days and sunny days"></a>Example: raning days and sunny days</h2><p><strong>Investors portfolio</strong>: sunglasses company</p>
+<ul>
+<li><strong>Risk factor</strong>: weather (rain)</li>
+<li>More rain -&gt; lower company value</li>
+<li>Lower campany value -&gt; lower stock price</li>
+<li>lower stock price -&gt; lower portfolio value</li>
+</ul>
+<p>Second opportunity: umbrella company </p>
+<ul>
+<li>more rain -&gt; more value</li>
+</ul>
+<p>Portfolio: sunglasses &amp; unbrella, more <strong>stable</strong> —&gt; risk reduced</p>
+<p>—-&gt; <strong>Hedging</strong>: offset volatility with another asset</p>
+<h2 id="Hudging-instrumentes-options-（期权）"><a href="#Hudging-instrumentes-options-（期权）" class="headerlink" title="Hudging instrumentes: options （期权）"></a>Hudging instrumentes: options （期权）</h2><p>derivative hedging strategies (衍生对冲策略)</p>
+<p>Hedging is often performed using <strong>derivatives</strong> to offset a risky asset position. </p>
+<p>One of the most basic derivatives is the <strong>European option</strong>. </p>
+<ul>
+<li>A European <strong>‘call’</strong> option gives the holder the right (but not the obligation) to _purchase_ a stock for a fixed price X at a particular time M. </li>
+<li>A European <strong>‘put’</strong> option gives the holder the right (but not the obligation) to _sell_ a stock for a fixed price X at a particular time M. </li>
+</ul>
+<p>The stock is called the ‘underlying’ of the option. The market price of the underlying is called the ‘spot’ price ‘S’. The fixed price is called the ’strike’ price ‘X’ and the time ‘M’ is the ‘maturity’.</p>
+<h2 id="Exercises-1"><a href="#Exercises-1" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id="Black-Scholes-options-pricing"><a href="#Black-Scholes-options-pricing" class="headerlink" title="Black-Scholes options pricing"></a>Black-Scholes options pricing</h3><p><a href="https://wiki.mbalib.com/wiki/Black-Scholes%E6%9C%9F%E6%9D%83%E5%AE%9A%E4%BB%B7%E6%A8%A1%E5%9E%8B" target="_blank" rel="noopener">Black-Scholes 期权定价模型</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Compute the volatility as the annualized standard deviation of IBM returns</span></span><br><span class="line">sigma = np.sqrt(<span class="number">252</span>) * IBM_returns.std() </span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the Black-Scholes option price for this volatility</span></span><br><span class="line">value_s = black_scholes(S = <span class="number">90</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                        sigma = sigma, option_type = <span class="string">"call"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the Black-Scholes option price for twice the volatility</span></span><br><span class="line">value_2s = black_scholes(S = <span class="number">90</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                sigma = <span class="number">2</span>*sigma, option_type = <span class="string">"call"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Display and compare both values</span></span><br><span class="line">print(<span class="string">"Option value for sigma: "</span>, value_s, <span class="string">"\n"</span>,</span><br><span class="line">      <span class="string">"Option value for 2 * sigma: "</span>, value_2s)</span><br></pre></td></tr></table></figure></p>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Option value for sigma:  12.129167513536352 </span><br><span class="line">Option value for 2 * sigma:  16.24149623118327</span><br></pre></td></tr></table></figure></p>
+<h3 id="Options-pricing-and-the-underlying-asset"><a href="#Options-pricing-and-the-underlying-asset" class="headerlink" title="Options pricing and the underlying asset"></a>Options pricing and the underlying asset</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Select the first 100 observations of IBM data</span><br><span class="line">IBM_spot = IBM[:100]</span><br><span class="line"></span><br><span class="line"># Initialize the European put option values array</span><br><span class="line">option_values = np.zeros(IBM_spot.size)</span><br><span class="line"></span><br><span class="line"># Iterate through IBM&apos;s spot price and compute the option values</span><br><span class="line">for i,S in enumerate(IBM_spot.values):</span><br><span class="line">    option_values[i] = black_scholes(S = S, X = 140, T = 0.5, r = 0.02, </span><br><span class="line">                        sigma = sigma, option_type = &quot;put&quot;)</span><br><span class="line"></span><br><span class="line"># Display the option values array</span><br><span class="line">option_axis.plot(option_values, color = &quot;red&quot;, label = &quot;Put Option&quot;)</span><br><span class="line">option_axis.legend(loc = &quot;upper left&quot;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/14.%20Options%20pricing%20and%20the%20underlying%20asset.svg" alt="Options pricing and the underlying asset"></p>
+<h3 id="Using-options-for-hedging"><a href="#Using-options-for-hedging" class="headerlink" title="Using options for hedging"></a>Using options for hedging</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Compute the annualized standard deviation of `IBM` returns</span></span><br><span class="line">sigma = np.sqrt(<span class="number">252</span>) * IBM_returns.std()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the Black-Scholes value at IBM spot price 70</span></span><br><span class="line">value = black_scholes(S = <span class="number">70</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                      sigma = sigma, option_type = <span class="string">"put"</span>)</span><br><span class="line"><span class="comment"># Find the delta of the option at IBM spot price 70</span></span><br><span class="line">delta = bs_delta(S = <span class="number">70</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                 sigma = sigma, option_type = <span class="string">"put"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the option value change when the price of IBM falls to 69.5</span></span><br><span class="line">value_change = black_scholes(S = <span class="number">69.5</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                             sigma = sigma, option_type = <span class="string">"put"</span>) - value</span><br><span class="line"></span><br><span class="line">print( (<span class="number">69.5</span> - <span class="number">70</span>) + (<span class="number">1</span>/delta) * value_change )</span><br></pre></td></tr></table></figure>
+<p>结果为<code>0.00459428051019628</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/09/Quantative-Risk-Management-1-4-Risk-and-Return/" rel="next" title="Quantative Risk Management 1/4 - Risk and Return">
+                <i class="fa fa-chevron-left"></i> Quantative Risk Management 1/4 - Risk and Return
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/09/Quantative-Risk-Management-3-4-Estimating-and-identifying-risk/" rel="prev" title="Quantative Risk Management 3/4 Estimating and identifying risk">
+                Quantative Risk Management 3/4 Estimating and identifying risk <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Xi XIA">
+            
+              <p class="site-author-name" itemprop="name">Xi XIA</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiaxii" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/xiaxii/" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-fab fa-linkedin"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Measuring-Risk"><span class="nav-number">1.</span> <span class="nav-text">Measuring Risk</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Loss-Distribution"><span class="nav-number">1.1.</span> <span class="nav-text">The Loss Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maximum-loss"><span class="nav-number">1.2.</span> <span class="nav-text">Maximum loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Value-at-risk-VaR"><span class="nav-number">1.3.</span> <span class="nav-text">Value at risk (VaR)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Value-at-Risk-CVaR"><span class="nav-number">1.4.</span> <span class="nav-text">Conditional Value at Risk (CVaR)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deriving-the-VaR"><span class="nav-number">1.5.</span> <span class="nav-text">Deriving the VaR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deriving-the-CVaR"><span class="nav-number">1.6.</span> <span class="nav-text">Deriving the CVaR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visulizing-the-VaR"><span class="nav-number">1.7.</span> <span class="nav-text">Visulizing the VaR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excercises"><span class="nav-number">1.8.</span> <span class="nav-text">Excercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VaR-for-the-Normal-distribution"><span class="nav-number">1.8.1.</span> <span class="nav-text">VaR for the Normal distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparing-CVaR-and-VaR"><span class="nav-number">1.8.2.</span> <span class="nav-text">Comparing CVaR and VaR</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Risk-exposure-and-loss"><span class="nav-number">2.</span> <span class="nav-text">Risk exposure and loss</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deciding-between-options"><span class="nav-number">2.1.</span> <span class="nav-text">Deciding between options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-exposure-and-VaR"><span class="nav-number">2.2.</span> <span class="nav-text">Risk exposure and VaR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-appetite"><span class="nav-number">2.3.</span> <span class="nav-text">Risk appetite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#degrees-of-freedom-df"><span class="nav-number">2.4.</span> <span class="nav-text">degrees of freedom (df)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">2.5.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VaR-and-risk-exposure"><span class="nav-number">2.5.1.</span> <span class="nav-text">VaR and risk exposure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CVaR-and-risk-exposure"><span class="nav-number">2.5.2.</span> <span class="nav-text">CVaR and risk exposure</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Risk-management-with-VaR-and-CVaR"><span class="nav-number">3.</span> <span class="nav-text">Risk management with VaR and CVaR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Incorporating-VaR-into-MPT"><span class="nav-number">3.1.</span> <span class="nav-text">Incorporating VaR into MPT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-new-objective-minimize-CVaR"><span class="nav-number">3.2.</span> <span class="nav-text">A new objective: minimize CVaR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CVaR-minimization-using-PyPortfolioOpt"><span class="nav-number">3.3.</span> <span class="nav-text">CVaR minimization using PyPortfolioOpt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Negative-CVaR"><span class="nav-number">3.4.</span> <span class="nav-text">Negative CVaR?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mean-variance-vs-CVaR-risk-management"><span class="nav-number">3.5.</span> <span class="nav-text">Mean-variance vs. CVaR risk management</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Excercies"><span class="nav-number">3.6.</span> <span class="nav-text">Excercies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VaR-from-a-fitted-distribution"><span class="nav-number">3.7.</span> <span class="nav-text">VaR from a fitted distribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Minimizing-CVaR"><span class="nav-number">3.7.1.</span> <span class="nav-text">Minimizing CVaR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CVaR-risk-management-and-the-crisis"><span class="nav-number">3.7.2.</span> <span class="nav-text">CVaR risk management and the crisis</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Portfolio-hedging-offsetting-risk"><span class="nav-number">4.</span> <span class="nav-text">Portfolio hedging: offsetting risk</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Portfolio-statbility"><span class="nav-number">4.1.</span> <span class="nav-text">Portfolio statbility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-raning-days-and-sunny-days"><span class="nav-number">4.2.</span> <span class="nav-text">Example: raning days and sunny days</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hudging-instrumentes-options-（期权）"><span class="nav-number">4.3.</span> <span class="nav-text">Hudging instrumentes: options （期权）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises-1"><span class="nav-number">4.4.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Black-Scholes-options-pricing"><span class="nav-number">4.4.1.</span> <span class="nav-text">Black-Scholes options pricing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Options-pricing-and-the-underlying-asset"><span class="nav-number">4.4.2.</span> <span class="nav-text">Options pricing and the underlying asset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-options-for-hedging"><span class="nav-number">4.4.3.</span> <span class="nav-text">Using options for hedging</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xi XIA</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+    <!-- 代码块复制功能 -->
+    <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

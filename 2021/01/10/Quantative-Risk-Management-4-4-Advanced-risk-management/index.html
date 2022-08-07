@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-X.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-X.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xi XIA's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="4/4 Objectives:  explore more general risk management tools. These advanced techniques are pivotal when attempting to understand extreme events, such as losses incurred during the financial crisis, an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quantative Risk Management 4&#x2F;4 - Advanced risk management">
+<meta property="og:url" content="https://xiaxii.github.io/2021/01/10/Quantative-Risk-Management-4-4-Advanced-risk-management/index.html">
+<meta property="og:site_name" content="Xi XIA&#39;s Blog">
+<meta property="og:description" content="4/4 Objectives:  explore more general risk management tools. These advanced techniques are pivotal when attempting to understand extreme events, such as losses incurred during the financial crisis, an">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/32.%20GEV.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/33.%20VaR%20CVaR%20and%20GEV.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/34.%20Covering%20losses%20example.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/35.%20Block%20maxima.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/36.%20Extreme%20events%20during%20the%20crisis.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/37.%20Extreme%20events%20during%20the%20crisis.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/38.%20Kernel.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/39.%20Data%20Smoothing.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/40.%20The%20Gaussian%20kernel.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/41.%20KDE%20in%20Python.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/42.%20Find%20VaR%20using%20KDE.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/43.%20KDE%20of%20a%20loss%20distribution.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/44.%20fitted%20distributions.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/45.%20Neural%20Networks.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/46.%20Neural%20Network%20Structure.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/47.%20Training%20the%20Network.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/48.%20Risk%20Management%20in%20Python.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/49.%20Single%20Layer%20neural%20networks.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/50.%20Asset%20price%20prediction.svg">
+<meta property="og:updated_time" content="2021-06-11T00:42:14.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quantative Risk Management 4&#x2F;4 - Advanced risk management">
+<meta name="twitter:description" content="4/4 Objectives:  explore more general risk management tools. These advanced techniques are pivotal when attempting to understand extreme events, such as losses incurred during the financial crisis, an">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/32.%20GEV.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'CWQ8BGCUZ7',
+      apiKey: 'be2086cbddc646c4027a56c1573319d8',
+      indexName: 'test_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiaxii.github.io/2021/01/10/Quantative-Risk-Management-4-4-Advanced-risk-management/">
+
+
+
+
+
+  <title>Quantative Risk Management 4/4 - Advanced risk management | Xi XIA's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/xiaxii" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xi XIA's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">notes of study and life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaxii.github.io/2021/01/10/Quantative-Risk-Management-4-4-Advanced-risk-management/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xi XIA">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xi XIA's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Quantative Risk Management 4/4 - Advanced risk management</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-10T00:16:21-05:00">
+                2021-01-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2021-06-10T20:42:14-04:00">
+                2021-06-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Projects/" itemprop="url" rel="index">
+                    <span itemprop="name">Projects</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>4/4 Objectives:</strong></p>
+<ol>
+<li>explore more general risk management tools. These advanced techniques are pivotal when attempting to understand extreme events, such as losses incurred during the financial crisis, and complicated loss distributions which may defy traditional estimation techniques. </li>
+<li>discover how neural networks can be implemented to approximate loss distributions and conduct real-time portfolio optimization.</li>
+</ol>
+<a id="more"></a>
+<h1 id="Extreme-value-theory"><a href="#Extreme-value-theory" class="headerlink" title="Extreme value theory"></a>Extreme value theory</h1><p>Extreme value theory uses statistics to help understand the distribution of extreme values. In other words, it is a way to help model _the tail_ of the loss distribution. One way to do this is called the “block maxima” approach. </p>
+<p><strong>Extreme value theory</strong>: statistical distribution of extre values<br><strong>Block Maxima</strong>:</p>
+<ul>
+<li>break period into sub-periods</li>
+<li>form blocks from each sub-period</li>
+<li>set of block maxima = dataset<br><strong>Peak over threshold (POT)</strong>:</li>
+<li>Find all losses over given level</li>
+<li>Set of such losses = dataset</li>
+</ul>
+<h2 id="Generalized-Extreme-Value-Distribution-GEV"><a href="#Generalized-Extreme-Value-Distribution-GEV" class="headerlink" title="Generalized Extreme Value Distribution (GEV)"></a>Generalized Extreme Value Distribution (GEV)</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/32.%20GEV.png" alt></p>
+<h2 id="VaR-and-CVaR-from-GEV-distribution"><a href="#VaR-and-CVaR-from-GEV-distribution" class="headerlink" title="VaR and CVaR from GEV distribution"></a>VaR and CVaR from GEV distribution</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/33.%20VaR%20CVaR%20and%20GEV.png" alt></p>
+<h2 id="Coving-losses"><a href="#Coving-losses" class="headerlink" title="Coving losses"></a>Coving losses</h2><p>risk management: covering losses</p>
+<ul>
+<li><strong>regulatory requirement</strong> (banks, insurance)</li>
+<li>reserves must be avaliable to cover losses (for a specific time peroid/ at a specific confidence level)</li>
+</ul>
+<p><strong>VaR from GEV distribution</strong>:<br>estimate maximum loss in a given period and at a given confidence level</p>
+<p>Example: reserve requirement （储备金要求）<br>99％的置信水平和一周的时间范围内<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/34.%20Covering%20losses%20example.png" alt></p>
+<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id="Block-maxima"><a href="#Block-maxima" class="headerlink" title="Block maxima"></a>Block maxima</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Resample the data into weekly blocks</span></span><br><span class="line">weekly_maxima = losses.resample(<span class="string">"W"</span>).max()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the resulting weekly maxima</span></span><br><span class="line">axis_1.plot(weekly_maxima, label = <span class="string">"Weekly Maxima"</span>)</span><br><span class="line">axis_1.legend()</span><br><span class="line">plt.figure(<span class="string">"weekly"</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Resample the data into monthly blocks</span></span><br><span class="line">monthly_maxima = losses.resample(<span class="string">"M"</span>).max()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the resulting monthly maxima</span></span><br><span class="line">axis_2.plot(monthly_maxima, label = <span class="string">"Monthly Maxima"</span>)</span><br><span class="line">axis_2.legend()</span><br><span class="line">plt.figure(<span class="string">"monthly"</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Resample the data into quarterly blocks</span></span><br><span class="line">quarterly_maxima = losses.resample(<span class="string">"Q"</span>).max()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the resulting quarterly maxima</span></span><br><span class="line">axis_3.plot(quarterly_maxima, label = <span class="string">"Quarterly Maxima"</span>)</span><br><span class="line">axis_3.legend()</span><br><span class="line">plt.figure(<span class="string">"quarterly"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/35.%20Block%20maxima.svg" alt="Block maxima"></p>
+<h3 id="Extreme-events-during-the-crisis"><a href="#Extreme-events-during-the-crisis" class="headerlink" title="Extreme events during the crisis"></a>Extreme events during the crisis</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plot the log daily losses of GE over the period 2007-2009</span></span><br><span class="line">losses.plot()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find all daily losses greater than 10%</span></span><br><span class="line">extreme_losses = losses[losses &gt; <span class="number">0.10</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter plot the extreme losses</span></span><br><span class="line">extreme_losses.plot(style=<span class="string">'o'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/36.%20Extreme%20events%20during%20the%20crisis.svg" alt="Extreme events during the crisis"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Fit extreme distribution to weekly maximum of losses</span><br><span class="line">fitted = genextreme.fit(weekly_max)</span><br><span class="line"></span><br><span class="line"># Plot extreme distribution with weekly max losses historgram</span><br><span class="line">x = np.linspace(min(weekly_max), max(weekly_max), 100)</span><br><span class="line">plt.plot(x, genextreme.pdf(x, *fitted))</span><br><span class="line">plt.hist(weekly_max, 50, density = True, alpha = 0.3)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/37.%20Extreme%20events%20during%20the%20crisis.svg" alt></p>
+<h3 id="GEV-risk-estimation"><a href="#GEV-risk-estimation" class="headerlink" title="GEV risk estimation"></a>GEV risk estimation</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Compute the weekly block maxima for GE&apos;s stock</span><br><span class="line">weekly_maxima = losses.resample(&quot;W&quot;).max()</span><br><span class="line"></span><br><span class="line"># Fit the GEV distribution to the maxima</span><br><span class="line">p = genextreme.fit(weekly_maxima)</span><br><span class="line"></span><br><span class="line"># Compute the 99% VaR (needed for the CVaR computation)</span><br><span class="line">VaR_99 = genextreme.ppf(0.99, *p)</span><br><span class="line"></span><br><span class="line"># Compute the 99% CVaR estimate</span><br><span class="line">CVaR_99 = (1 / (1 - 0.99)) * genextreme.expect(lambda x: x, </span><br><span class="line">           args=(p[0],), loc = p[1], scale = p[2], lb = VaR_99)</span><br><span class="line"></span><br><span class="line"># Display the covering loss amount</span><br><span class="line">print(&quot;Reserve amount: &quot;, 1000000 * CVaR_99)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Reserve amount:  148202.41307731598</span><br></pre></td></tr></table></figure></p>
+<h1 id="Kernel-density-estimation"><a href="#Kernel-density-estimation" class="headerlink" title="Kernel density estimation"></a>Kernel density estimation</h1><h2 id="The-histogram-revisited"><a href="#The-histogram-revisited" class="headerlink" title="The histogram revisited"></a>The histogram revisited</h2><p>Up to now our <strong><em>risk factor distributions</em></strong> have been <strong>assumed</strong> (such as the _Normal_ or _T distribution_), <strong>fitted</strong> (from, for example, _parametric estimation_ or _Monte Carlo simulation_), or <strong>ignored</strong> (as with _historical simulation_). </p>
+<p>In each case, actual data can be summarized with a <strong>histogram</strong>. A histogram is not a distribution: but we would like a <strong>function</strong> to represent the histogram as a probability distribution (or density function). </p>
+<p>How can we do this? A middle ground between parametric estimation and ignoring the distribution is to _filter the data so that they become smooth enough to represent a distribution._ This can be done with <strong>non-parametric</strong> estimation, which does <strong>not assume</strong> a parametrized class of distributions (such as the Normal, Skewed Normal, or Student’s t-distribution).</p>
+<h2 id="Data-smoothing"><a href="#Data-smoothing" class="headerlink" title="Data smoothing"></a>Data smoothing</h2><p>Kernal: filter choice/ the “window”<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/38.%20Kernel.png" alt="kernel"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/39.%20Data%20Smoothing.png" alt="smooth"></p>
+<h2 id="The-Gaussian-kernel"><a href="#The-Gaussian-kernel" class="headerlink" title="The Gaussian kernel"></a>The Gaussian kernel</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/40.%20The%20Gaussian%20kernel.png" alt="gaussian"></p>
+<h2 id="KDE-in-Python"><a href="#KDE-in-Python" class="headerlink" title="KDE in Python"></a>KDE in Python</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/41.%20KDE%20in%20Python.png" alt="KDE in Python"></p>
+<h2 id="Find-VaR-using-KDE"><a href="#Find-VaR-using-KDE" class="headerlink" title="Find VaR using KDE"></a>Find VaR using KDE</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/42.%20Find%20VaR%20using%20KDE.png" alt="Find VaR using KDE"></p>
+<h2 id="Exercises-1"><a href="#Exercises-1" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id><a href="#" class="headerlink" title=" "></a> </h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generate a fitted T distribution over losses</span></span><br><span class="line">params = t.fit(losses)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate a Gaussian kernal density estimate over losses</span></span><br><span class="line">kde = gaussian_kde(losses)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add the PDFs of both estimates to a histogram, and display</span></span><br><span class="line">loss_range = np.linspace(np.min(losses), np.max(losses), <span class="number">1000</span>)</span><br><span class="line">axis.plot(loss_range, t.pdf(loss_range, *params), label = <span class="string">'T distribution'</span>)</span><br><span class="line">axis.plot(loss_range, kde.pdf(loss_range), label = <span class="string">'Gaussian KDE'</span>)</span><br><span class="line">plt.legend(); plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/43.%20KDE%20of%20a%20loss%20distribution.svg" alt="KDE of a loss distribution"></p>
+<h3 id="Fitted-distributions"><a href="#Fitted-distributions" class="headerlink" title="Fitted distributions"></a>Fitted distributions</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/44.%20fitted%20distributions.svg" alt></p>
+<ul>
+<li>The Gaussian KDE captures the tails well, but another distribution is better at fitting the loss distribution’s peak.</li>
+<li>The T distribution does capture the peak well. But there’s another distribution which captures the tails of the distribution better.</li>
+<li>The T and Gaussian KDE estimates are both good fits, each in a different way: the T captures the peak well, while the KDE captures the tails better.</li>
+</ul>
+<h3 id="CVaR-and-loos-cover-selection"><a href="#CVaR-and-loos-cover-selection" class="headerlink" title="CVaR and loos cover selection"></a>CVaR and loos cover selection</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Find the VaR as a quantile of random samples from the distributions</span></span><br><span class="line">VaR_99_T   = np.quantile(t.rvs(size=<span class="number">1000</span>, *p), <span class="number">0.99</span>)</span><br><span class="line">VaR_99_KDE = np.quantile(kde.resample(size=<span class="number">1000</span>), <span class="number">0.99</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the expected tail losses, with lower bounds given by the VaR measures</span></span><br><span class="line">integral_T   = t.expect(<span class="keyword">lambda</span> x: x, args = (p[<span class="number">0</span>],), loc = p[<span class="number">1</span>], scale = p[<span class="number">2</span>], lb = VaR_99_T)</span><br><span class="line">integral_KDE = kde.expect(<span class="keyword">lambda</span> x: x, lb = VaR_99_KDE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the 99% CVaR estimates</span></span><br><span class="line">CVaR_99_T   = (<span class="number">1</span> / (<span class="number">1</span> - <span class="number">0.99</span>)) * integral_T</span><br><span class="line">CVaR_99_KDE = (<span class="number">1</span> / (<span class="number">1</span> - <span class="number">0.99</span>)) * integral_KDE</span><br><span class="line"></span><br><span class="line"><span class="comment"># Display the results</span></span><br><span class="line">print(<span class="string">"99% CVaR for T: "</span>, CVaR_99_T, <span class="string">"; 99% CVaR for KDE: "</span>, CVaR_99_KDE)</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">99% CVaR for T:  0.2716201587142073 ; 99% CVaR for KDE:  0.2395800993943245</span><br></pre></td></tr></table></figure></p>
+<h1 id="Neural-network-risk-management"><a href="#Neural-network-risk-management" class="headerlink" title="Neural network risk management"></a>Neural network risk management</h1><h2 id="Real-time-portfolio-updating"><a href="#Real-time-portfolio-updating" class="headerlink" title="Real-time portfolio updating"></a>Real-time portfolio updating</h2><p><strong>Risk management </strong></p>
+<ul>
+<li><strong>Define</strong> risk measures (VaR, CVaR)</li>
+<li><strong>Estimate</strong> risk measures (parameteric, historical, Monte Carlo)</li>
+<li><strong>Optimized</strong> portfolio (e.g. Mordern Portfolio Theory)</li>
+</ul>
+<p><strong>New Market information -&gt; update portfolio weights</strong></p>
+<ul>
+<li><strong>Problem</strong>: portfolio optimization costly</li>
+<li><strong>Solution:</strong> weights = <em>f</em>(weights)</li>
+<li><em>Evaluate f </em>in real-time</li>
+<li><em>Update f</em> only occasionally</li>
+</ul>
+<h2 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/45.%20Neural%20Networks.png" alt="Neural Networks"><br>A neural network is a function: it takes an input (such as _asset prices_) and returns an output (such as _portfolio weights_). </p>
+<p>It’s called a neural network because it contains interconnected processing nodes known as ‘neurons’, loosely resembling the connections between neurons in the brain. </p>
+<p><strong>Neural networks</strong> have been around since the 1940s, but they have enjoyed a resurgence of development since the early 2000s. </p>
+<p>They are used to solve problems with <strong>large data sets</strong>, such as image recognition, financial analysis, and search engine performance. </p>
+<p>Very large neural networks make up <strong>“Deep Learning”</strong> and are a part of the <strong>Machine Learning</strong> discipline. In 2015, Google released Tensorflow, an open-source environment, initially in Python, for performing Deep Learning.</p>
+<h2 id="Neural-network-structure"><a href="#Neural-network-structure" class="headerlink" title="Neural network structure"></a>Neural network structure</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/46.%20Neural%20Network%20Structure.png" alt="Neural network structure"></p>
+<h2 id="Using-neural-networks-for-portfolio-optimization"><a href="#Using-neural-networks-for-portfolio-optimization" class="headerlink" title="Using neural networks for portfolio optimization"></a>Using neural networks for portfolio optimization</h2><p>Training</p>
+<ul>
+<li>Compare output and pre-existing “best” portfolio weights</li>
+<li>Goal: minimize “error” between output and weights</li>
+<li>Small error -&gt; network is trained<br>通过将神经网络与预先存在的“最佳”权重进行比较，来评估神经网络在创建其输出中的表现。(这些权重可从历史数据的投资组合优化中找到)<br>目的是使输出和历史“最佳”权重之间的差异尽可能小，使得神经网络这个函数可以达到<strong>输出最佳投资权重</strong>的功能。</li>
+</ul>
+<p>Usage</p>
+<ul>
+<li>Input: new, unseen asset prices</li>
+<li>Output: predicted “best” portfolio weights for new asset prices</li>
+<li>Best weights = risk management</li>
+</ul>
+<h2 id="Creating-neural-networks-in-Python"><a href="#Creating-neural-networks-in-Python" class="headerlink" title="Creating neural networks in Python"></a>Creating neural networks in Python</h2><p><strong>Keras</strong>: high-level python library for neural networks/ deep learning<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense</span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(<span class="number">10</span>, imput_dim = <span class="number">4</span>, activation = <span class="string">'sigmoid'</span>))</span><br><span class="line">model.add(Dense(<span class="number">4</span>))</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>To use Keras, we first need to import the kind of neural network—this is a ‘Sequential’ network going from input-to-hidden-to-output layers. </li>
+<li>Then we need to import the connections between <strong>layers</strong> (the arrows we saw previously). We’ll connect all neurons together using ‘Dense’ layers. </li>
+<li>Next we’ll define our neural network ‘model’ and create our <strong>hidden and output layers</strong>, using the ‘.add()’ method. Notice how the input layer is specified with the ‘input_dim’ keyword, which in our case covers the four assets in our investment bank portfolio. And since we also need four output weights, there are four “neurons” in the last output layer. </li>
+</ol>
+<h2 id="Training-the-network-in-Python"><a href="#Training-the-network-in-Python" class="headerlink" title="Training the network in Python"></a>Training the network in Python</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/47.%20Training%20the%20Network.png" alt><br>We’ve put asset prices into the ‘training_input’ matrix and portfolio weights into the ‘training_output’ vector. These are used to train the network. </p>
+<ol>
+<li>The model is first compiled to specify the error minimization function and how optimization is performed. </li>
+<li>Then we “fit” the network to the data, which carries out the minimization. </li>
+<li>The number of iterations to fit the data is given with the ‘epochs’ keyword—generally more is better.</li>
+</ol>
+<h2 id="Risk-Management-in-Python"><a href="#Risk-Management-in-Python" class="headerlink" title="Risk Management in Python"></a>Risk Management in Python</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/48.%20Risk%20Management%20in%20Python.png" alt><br>To use the network we can give it ‘new_asset_prices’ it has never seen before!<br>The network evaluates the new asset prices using the <strong>‘.predict()’</strong> method, and _returns a set of portfolio weights_. </p>
+<p>Over time, of course, new asset prices will accumulate, and they provide valuable information. Re-training the network every so often on new data, and backtesting it on old data, is part of the neural network workflow.</p>
+<h2 id="Exercises-2"><a href="#Exercises-2" class="headerlink" title="Exercises"></a>Exercises</h2><h3 id="Single-layer-neural-networks"><a href="#Single-layer-neural-networks" class="headerlink" title="Single layer neural networks"></a>Single layer neural networks</h3><ul>
+<li>Create the output training values using Numpy’s <code>sqrt()</code> function.</li>
+<li>Create the neural network with one hidden layer of 16 neurons, one input value, and one output value.</li>
+<li>Compile and fit the neural network on the training values, for 100 epochs</li>
+<li>Plot the training values (in blue) against the neural network’s predicted values.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create the training values from the square root function</span></span><br><span class="line">y = np.sqrt(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the neural network</span></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(<span class="number">16</span>, input_dim=<span class="number">1</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Train the network</span></span><br><span class="line">model.compile(loss=<span class="string">'mean_squared_error'</span>, optimizer=<span class="string">'rmsprop'</span>)</span><br><span class="line">model.fit(x, y, epochs=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Plot the resulting approximation and the training values</span></span><br><span class="line">plt.plot(x, y, x, model.predict(x))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/49.%20Single%20Layer%20neural%20networks.svg" alt></p>
+<h3 id="Asset-price-prediction"><a href="#Asset-price-prediction" class="headerlink" title="Asset price prediction"></a>Asset price prediction</h3><p>Now we can use a neural network to predict an asset price, which is a large component of quantitative financial analysis as well as risk management.</p>
+<ul>
+<li>Set the input data to be all bank <code>prices</code> except Morgan Stanley, and the output data to be only Morgan Stanley’s <code>prices</code>.</li>
+<li>Create a <code>Sequential</code> neural network <code>model</code> with two <code>Dense</code> hidden layers: the first with 16 neurons (and three input neurons), and the second with 8 neurons.</li>
+<li>Add a single Dense output layer of 1 neuron to represent Morgan Stanley’s price.</li>
+<li>Compile the neural network, and train it by fitting the <code>model</code>.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set the input and output data</span></span><br><span class="line">training_input = prices.drop(<span class="string">'Morgan Stanley'</span>, axis=<span class="number">1</span>)</span><br><span class="line">training_output = prices[<span class="string">'Morgan Stanley'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create and train the neural network with two hidden layers</span></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(<span class="number">16</span>, input_dim=<span class="number">3</span>, activation=<span class="string">'sigmoid'</span>))</span><br><span class="line">model.add(Dense(<span class="number">8</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">model.compile(loss=<span class="string">'mean_squared_logarithmic_error'</span>, optimizer=<span class="string">'rmsprop'</span>)</span><br><span class="line">model.fit(training_input, training_output, epochs=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter plot of the resulting model prediction</span></span><br><span class="line">axis.scatter(training_output, model.predict(training_input)); plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/50.%20Asset%20price%20prediction.svg" alt></p>
+<h2 id="Real-time-risk-management"><a href="#Real-time-risk-management" class="headerlink" title="Real-time risk management"></a>Real-time risk management</h2><p>A 14-day rolling window of asset returns provides enough data to create a time series of <em>minimum volatility portfolios</em> using Modern Portfolio Theory, as we saw in Chapter 2. These <code>minimum_vol</code> portfolio weights are the training values for a neural network. This is a (1497 x 4) matrix.</p>
+<p>The input is the matrix of weekly <code>average_asset_returns</code>, corresponding to each efficient portfolio. This is a (1497 x 4) matrix.</p>
+<p>Create a Sequential neural network with the proper input dimension and two hidden layers. Training this network would take too long, so you’ll use an available <code>pre_trained_model</code> of identical type to predict portfolio weights for a new asset price vector.</p>
+<ul>
+<li>Create a Sequential neural network with two hidden layers, one input layer and one output layer.</li>
+<li>Use the <code>pre_trained_model</code> to predict what the minimum volatility portfolio would be, when new asset data <code>asset_returns</code> is presented.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create neural network model</span></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(<span class="number">128</span>, input_dim = <span class="number">4</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">64</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">4</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use the pre-trained model to predict portfolio weights given new asset returns</span></span><br><span class="line">asset_returns = np.array([<span class="number">0.001060</span>, <span class="number">0.003832</span>, <span class="number">0.000726</span>, <span class="number">-0.002787</span>])</span><br><span class="line">asset_returns.shape = (<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line">print(<span class="string">"Predicted minimum volatility portfolio: "</span>, pre_trained_model.predict(asset_returns))</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Predicted minimum volatility portfolio:  [[0.         0.28107247 0.         0.7649856 ]]</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/09/Quantative-Risk-Management-3-4-Estimating-and-identifying-risk/" rel="next" title="Quantative Risk Management 3/4 Estimating and identifying risk">
+                <i class="fa fa-chevron-left"></i> Quantative Risk Management 3/4 Estimating and identifying risk
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/10/Quantative-Risk-Management-Warp-up/" rel="prev" title="Quantative Risk Management - Warp-up">
+                Quantative Risk Management - Warp-up <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Xi XIA">
+            
+              <p class="site-author-name" itemprop="name">Xi XIA</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiaxii" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/xiaxii/" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-fab fa-linkedin"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Extreme-value-theory"><span class="nav-number">1.</span> <span class="nav-text">Extreme value theory</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Generalized-Extreme-Value-Distribution-GEV"><span class="nav-number">1.1.</span> <span class="nav-text">Generalized Extreme Value Distribution (GEV)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VaR-and-CVaR-from-GEV-distribution"><span class="nav-number">1.2.</span> <span class="nav-text">VaR and CVaR from GEV distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coving-losses"><span class="nav-number">1.3.</span> <span class="nav-text">Coving losses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">1.4.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-maxima"><span class="nav-number">1.4.1.</span> <span class="nav-text">Block maxima</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extreme-events-during-the-crisis"><span class="nav-number">1.4.2.</span> <span class="nav-text">Extreme events during the crisis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GEV-risk-estimation"><span class="nav-number">1.4.3.</span> <span class="nav-text">GEV risk estimation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kernel-density-estimation"><span class="nav-number">2.</span> <span class="nav-text">Kernel density estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-histogram-revisited"><span class="nav-number">2.1.</span> <span class="nav-text">The histogram revisited</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-smoothing"><span class="nav-number">2.2.</span> <span class="nav-text">Data smoothing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Gaussian-kernel"><span class="nav-number">2.3.</span> <span class="nav-text">The Gaussian kernel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KDE-in-Python"><span class="nav-number">2.4.</span> <span class="nav-text">KDE in Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Find-VaR-using-KDE"><span class="nav-number">2.5.</span> <span class="nav-text">Find VaR using KDE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises-1"><span class="nav-number">2.6.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.6.1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fitted-distributions"><span class="nav-number">2.6.2.</span> <span class="nav-text">Fitted distributions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CVaR-and-loos-cover-selection"><span class="nav-number">2.6.3.</span> <span class="nav-text">CVaR and loos cover selection</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Neural-network-risk-management"><span class="nav-number">3.</span> <span class="nav-text">Neural network risk management</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Real-time-portfolio-updating"><span class="nav-number">3.1.</span> <span class="nav-text">Real-time portfolio updating</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Neural-Networks"><span class="nav-number">3.2.</span> <span class="nav-text">Neural Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Neural-network-structure"><span class="nav-number">3.3.</span> <span class="nav-text">Neural network structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-neural-networks-for-portfolio-optimization"><span class="nav-number">3.4.</span> <span class="nav-text">Using neural networks for portfolio optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Creating-neural-networks-in-Python"><span class="nav-number">3.5.</span> <span class="nav-text">Creating neural networks in Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-the-network-in-Python"><span class="nav-number">3.6.</span> <span class="nav-text">Training the network in Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-Management-in-Python"><span class="nav-number">3.7.</span> <span class="nav-text">Risk Management in Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises-2"><span class="nav-number">3.8.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-layer-neural-networks"><span class="nav-number">3.8.1.</span> <span class="nav-text">Single layer neural networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Asset-price-prediction"><span class="nav-number">3.8.2.</span> <span class="nav-text">Asset price prediction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Real-time-risk-management"><span class="nav-number">3.9.</span> <span class="nav-text">Real-time risk management</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xi XIA</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+    <!-- 代码块复制功能 -->
+    <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

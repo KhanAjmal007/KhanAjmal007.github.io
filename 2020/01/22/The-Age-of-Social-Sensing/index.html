@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-X.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-X.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xi XIA's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Reference: The Age of Social Sensing1st paper review for 2019 iSURE @ Social Sensing Lab at University of Notre Dame.  Social Sensing aims to better understand the physical world through social netwo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Age of Social Sensing">
+<meta property="og:url" content="https://xiaxii.github.io/2020/01/22/The-Age-of-Social-Sensing/index.html">
+<meta property="og:site_name" content="Xi XIA&#39;s Blog">
+<meta property="og:description" content="Reference: The Age of Social Sensing1st paper review for 2019 iSURE @ Social Sensing Lab at University of Notre Dame.  Social Sensing aims to better understand the physical world through social netwo">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/The%20social%20sensing%20modality%3B%20an%20analogy.png">
+<meta property="og:updated_time" content="2020-01-22T19:11:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Age of Social Sensing">
+<meta name="twitter:description" content="Reference: The Age of Social Sensing1st paper review for 2019 iSURE @ Social Sensing Lab at University of Notre Dame.  Social Sensing aims to better understand the physical world through social netwo">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/The%20social%20sensing%20modality%3B%20an%20analogy.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'CWQ8BGCUZ7',
+      apiKey: 'be2086cbddc646c4027a56c1573319d8',
+      indexName: 'test_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiaxii.github.io/2020/01/22/The-Age-of-Social-Sensing/">
+
+
+
+
+
+  <title>The Age of Social Sensing | Xi XIA's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/xiaxii" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xi XIA's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">notes of study and life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaxii.github.io/2020/01/22/The-Age-of-Social-Sensing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xi XIA">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xi XIA's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">The Age of Social Sensing</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-22T14:11:21-05:00">
+                2020-01-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-01-22T14:11:21-05:00">
+                2020-01-22
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Literature-review/" itemprop="url" rel="index">
+                    <span itemprop="name">Literature review</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Reference: <a href="https://www3.nd.edu/~sslab/pdf/computer-18.pdf" target="_blank" rel="noopener">The Age of Social Sensing</a><br>1st paper review for 2019 <a href="https://international.nd.edu/students-scholars/global-engagement-programs/summer-programs/isure/" target="_blank" rel="noopener">iSURE</a> @ <a href="https://www3.nd.edu/~sslab/" target="_blank" rel="noopener">Social Sensing Lab at University of Notre Dame</a>.</p>
+</blockquote>
+<p><strong><em>Social Sensing</em></strong> aims to better understand the <strong>physical world</strong> through <strong>social networks</strong>. The challenge is  how to extract information form the medium and find appropriate properties to characterize the extracted information and the world it represents.</p>
+<a id="more"></a>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><strong>Technology:</strong> physical technological sensors and social media.<br><strong>Today’s challenge:</strong> find and understand the valuable and truthful messages in the much larger volume of social media content.</p>
+<p><strong>Collective intelligence(群智):</strong><br>human intelligence is derived from reflexive reasoning, with language being the semantic indexing scheme into the arguments and results.<br><strong>Information Economy Meta Language (IEML):</strong><br>empower reflexivity, facilitate discovery of semantic ties, and document information provenance (using blockchain-like technologies) to keep track of the origins of ideas and preserve the collective reasoning behind them.</p>
+<p><strong>Focus:</strong> physical (social) reality<br><strong>Better algorithms:</strong>  to curb misrepresentation of physical reality and help build smarter urban services.</p>
+<p><strong>Two perspective of challenge:</strong></p>
+<ol>
+<li>challenge in the cyber-physical space </li>
+<li>challenge in the social and linguistic space </li>
+</ol>
+<h2 id="Cyber-physical-challenges-in-social-spaces"><a href="#Cyber-physical-challenges-in-social-spaces" class="headerlink" title="Cyber-physical challenges in social spaces"></a>Cyber-physical challenges in social spaces</h2><p>Understanding attributes of social sensing systems requires modeling three interdependent components</p>
+<ol>
+<li>the humans in the loop and their cognitive models</li>
+<li>the algorithms involved</li>
+<li>the laws of nature that govern the underlying physical and engineered artifacts.This may  requires interdisciplinary approaches to address the complex <strong>interaction between cyber, physical and social components</strong> of the holistic system.</li>
+</ol>
+<h3 id="Modeling-instrument-distortion-4-broad-categories"><a href="#Modeling-instrument-distortion-4-broad-categories" class="headerlink" title="Modeling instrument distortion (4 broad categories)"></a>Modeling instrument distortion (4 broad categories)</h3><ul>
+<li>Intentional disinformation.</li>
+<li><strong>Personal conclusions not sufficiently supported by data or observations</strong>, which might resonate with other people’s biases and propagate further as facts.</li>
+<li><strong>Biased interpretations by communities</strong> of people with similar opinions.</li>
+<li>Genuine <strong>random mistakes</strong> by people processing information, such as misspelling and typos.</li>
+</ul>
+<h3 id="Understanding-the-signal"><a href="#Understanding-the-signal" class="headerlink" title="Understanding the signal"></a>Understanding the signal</h3><p>Physical events trigger responses in the social media.  <strong>Humans work as “sensors” in this process.</strong><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/The%20social%20sensing%20modality%3B%20an%20analogy.png" alt="The social sensing modality: an analogy"><br>e.g. Use Twitter as a data source viewed statements about physical reality as a binary signal.( 1 for truth, 0 for rumors)</p>
+<h3 id="Quantifying-data-reliability-and-performance-bounds"><a href="#Quantifying-data-reliability-and-performance-bounds" class="headerlink" title="Quantifying data reliability and performance bounds"></a>Quantifying data reliability and performance bounds</h3><h4 id="Estimation-theory"><a href="#Estimation-theory" class="headerlink" title="Estimation theory"></a>Estimation theory</h4><p>To build the error of an optimal estimator:</p>
+<ol>
+<li>Represent social media as noisy binary communication channels.</li>
+<li>Estimation-theoretical frameworks are applied to the reliability analysis of data cleaning system.</li>
+</ol>
+<p>e.g. exploit expressions of <strong>error bounds of maximum-likelihood estimators</strong> to assess <strong>the quality of estimation results on social media</strong>.</p>
+<h4 id="Two-factors-complicates-the-analysis"><a href="#Two-factors-complicates-the-analysis" class="headerlink" title="Two factors complicates the analysis"></a>Two factors complicates the analysis</h4><ol>
+<li><strong>Correlated errors</strong> that result from rumor-spreading behaviors — A person reports as their own observations from others without verification.</li>
+<li><strong>The expressed degree</strong> of vagueness in humans observations. The degree of confidence is low when people use words like “possibly” and “might”.</li>
+</ol>
+<p>The conversion of <strong>natural language expressions</strong> of vagueness to <strong>quantifiable numbers</strong> is a very difficult problem that remains to be fully solved</p>
+<h3 id="The-role-of-dependencies-between-sources"><a href="#The-role-of-dependencies-between-sources" class="headerlink" title="The role of dependencies between sources"></a>The role of dependencies between sources</h3><p>Dependency can be found in social networks. (e.g. follower-followee relationship on Twitter and friends relation-ship on Facebook.)The complex and dynamic source <strong>dependency graphs</strong> on social networks deserve more investigation.</p>
+<h4 id="Recent-work"><a href="#Recent-work" class="headerlink" title="Recent work"></a>Recent work</h4><ol>
+<li>develop source selection schemes to carefully <strong>select independent sources</strong> on social networks or </li>
+<li>build reliable social sensing models to explicitly <strong>model the source dependency</strong> into the social signal processing engine</li>
+</ol>
+<h3 id="Understanding-communities-social-trust-and-polarization"><a href="#Understanding-communities-social-trust-and-polarization" class="headerlink" title="Understanding communities, social trust and polarization"></a>Understanding communities, social trust and polarization</h3><h4 id="Communities-and-social-Trust"><a href="#Communities-and-social-Trust" class="headerlink" title="Communities and social Trust"></a>Communities and social Trust</h4><p>Humans interact, operate, exchange and propagate information much more frequently within the communities than across them. Communities increase level of <strong>homophily</strong> among their members. People in the same community often <strong>share opinions and biases</strong>. It’s a key notion to understand information reliability.<br>People are likely to re-broadcast when:</p>
+<ol>
+<li>The information is from a source they trust.</li>
+<li>They agree with the opinion.</li>
+</ol>
+<p>Thus, <strong>trust relations and biases of sources</strong> can be observed from the propagation patterns of information.</p>
+<h4 id="Polarization"><a href="#Polarization" class="headerlink" title="Polarization"></a>Polarization</h4><p>When polarization is considered, the <strong>reconstruction</strong> from social observation tends to align more closely with <strong>ground truth in the physical world</strong>.</p>
+<h3 id="Fusion-of-physical-and-social-sensors"><a href="#Fusion-of-physical-and-social-sensors" class="headerlink" title="Fusion of physical and social sensors"></a>Fusion of physical and social sensors</h3><p>Social networks can be viewd as an additional sensing resource of physical sensors.<br>Decision-makers will act on the data in ways that impact the physical state being observed. Hence, an interesting question is to understand what information to present to the decision-maker (and how) in order to offer the best decision-support despite the inherent noise in the underlying social channel.</p>
+<h2 id="Challenges-in-the-linguistic-space"><a href="#Challenges-in-the-linguistic-space" class="headerlink" title="Challenges in the linguistic space"></a>Challenges in the linguistic space</h2><p>To understand social media content, we need to seek advances in rapid low-cost development of <strong>Information Extraction (IE) and Text Mining technologies</strong>.</p>
+<p><strong>Basis of today’s language processing technologies</strong>:</p>
+<ol>
+<li>Supervised learning: suffers from high cost of large-scale manual annotation and limited predefined fact types.</li>
+<li>Unsupervised learning: need to systematically discover and unify latent and expressed knowledge from <strong><em>traditional symbolic semantics and modern distributional semantics</em></strong> through advanced <strong>machine learning models</strong>.</li>
+</ol>
+<h3 id="Ambiguity-in-a-Sentence"><a href="#Ambiguity-in-a-Sentence" class="headerlink" title="Ambiguity in a Sentence"></a>Ambiguity in a Sentence</h3><p>Natural Language Processing (NLP) technologies currently rely heavily on surface processing. This makes it difficult to exploit <strong>deep structure, background knowledge and source information</strong>.</p>
+<h3 id="The-Importance-of-Context"><a href="#The-Importance-of-Context" class="headerlink" title="The Importance of Context"></a>The Importance of Context</h3><p>With the growth of online social network- ing services, people rapidly invent new ways to communicate sensitive ideas. We call this phenomenon <strong>information morphing</strong>, which also existed in the traditional forms of communications. Morphing raises unique challenges for entity and event co-reference resolution.</p>
+<h3 id="Discourse-Ambiguity"><a href="#Discourse-Ambiguity" class="headerlink" title="Discourse Ambiguity"></a>Discourse Ambiguity</h3><p>Besides sentence-level and subsentence-level ambiguities, there is yet one more level of ambiguity: super-sentential, or discourse level ambiguity which goes beyond sentence boundaries.This third level of ambiguity comes from two sources:</p>
+<ol>
+<li><strong>coreference ambiguity</strong>: pronouns often refer to entities outside of the current sentence and it is ambiguous to which entity they refer.</li>
+<li><strong>discourse structural ambiguity</strong>: a discourse, like a sentence, has its own internal structure, often represented as a tree or graph. For deep understanding of the text, we need to know, for example, which sentence is the topic sentence, which sentence is the elaboration or contrast of another sentence, and the temporal structure between sentences (in a story line).</li>
+</ol>
+<h3 id="Expressions-of-Fuzziness-and-Vagueness"><a href="#Expressions-of-Fuzziness-and-Vagueness" class="headerlink" title="Expressions of Fuzziness and Vagueness"></a>Expressions of Fuzziness and Vagueness</h3><p>Human sources typically describe objects using <strong>fuzzy terms</strong>, e.g., “she is very tall” instead of precise terms, e.g., “she is 6’2’’ tall.” It is very difficult to convert fuzzy terms into numbers as the use of such terms varies wildly over different humans or societies. It is much easier to calibrate physical sensors whose noise performance can be consistently measured.</p>
+<h2 id="Future-Directions"><a href="#Future-Directions" class="headerlink" title="Future Directions"></a>Future Directions</h2><p>The field of social sensing lacks a unified interdisciplinary problem formulation that takes a holistic approach to modeling humans as sensors, and modeling social media as noisy measuring instruments or channels.</p>
+<h3 id="5-required-synergistic-disciplines"><a href="#5-required-synergistic-disciplines" class="headerlink" title="5 required synergistic disciplines"></a>5 required synergistic disciplines</h3><ol>
+<li><strong>computational social scientists</strong>: to model human behavior and quantify its susceptibility to errors, omissions, deceit, and other irregularities.</li>
+<li><strong>linguistics</strong>: to model strengths and imperfections of human communication and their compounding effects on reliability of information dissemination.</li>
+<li><strong>information theorists</strong>: to model social networks as imperfect<br>communication media and derive fundamental capacity<br>limits and uncertainty envelopes.</li>
+<li><strong>data mining experts</strong>: to investigate the impact of the underlying error models relying on knowledge extraction from imperfect information.</li>
+<li><strong>cyber-physical experts</strong>: to develop estimation-theoretic observability and control limits and tools that offer closed-loop robustness guarantees in the face of derived capacity limits, uncertainty envelopes, and knowledge errors.</li>
+</ol>
+<p>Social Sensing is interdisciplinary research area which aims to bring about novel solutions for a better theoretical and systematic understanding of the future sensor and media-rich world.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/22/Is-Social-Media-Hurting-Your-Mental-Health/" rel="next" title="Is Social Media Hurting Your Mental Health?">
+                <i class="fa fa-chevron-left"></i> Is Social Media Hurting Your Mental Health?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/09/The-Eagle-Project-Review/" rel="prev" title="The Eagle Project">
+                The Eagle Project <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Xi XIA">
+            
+              <p class="site-author-name" itemprop="name">Xi XIA</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xiaxii" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/xiaxii/" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-fab fa-linkedin"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cyber-physical-challenges-in-social-spaces"><span class="nav-number">2.</span> <span class="nav-text">Cyber-physical challenges in social spaces</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Modeling-instrument-distortion-4-broad-categories"><span class="nav-number">2.1.</span> <span class="nav-text">Modeling instrument distortion (4 broad categories)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-the-signal"><span class="nav-number">2.2.</span> <span class="nav-text">Understanding the signal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quantifying-data-reliability-and-performance-bounds"><span class="nav-number">2.3.</span> <span class="nav-text">Quantifying data reliability and performance bounds</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Estimation-theory"><span class="nav-number">2.3.1.</span> <span class="nav-text">Estimation theory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-factors-complicates-the-analysis"><span class="nav-number">2.3.2.</span> <span class="nav-text">Two factors complicates the analysis</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-role-of-dependencies-between-sources"><span class="nav-number">2.4.</span> <span class="nav-text">The role of dependencies between sources</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Recent-work"><span class="nav-number">2.4.1.</span> <span class="nav-text">Recent work</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Understanding-communities-social-trust-and-polarization"><span class="nav-number">2.5.</span> <span class="nav-text">Understanding communities, social trust and polarization</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Communities-and-social-Trust"><span class="nav-number">2.5.1.</span> <span class="nav-text">Communities and social Trust</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Polarization"><span class="nav-number">2.5.2.</span> <span class="nav-text">Polarization</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fusion-of-physical-and-social-sensors"><span class="nav-number">2.6.</span> <span class="nav-text">Fusion of physical and social sensors</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Challenges-in-the-linguistic-space"><span class="nav-number">3.</span> <span class="nav-text">Challenges in the linguistic space</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ambiguity-in-a-Sentence"><span class="nav-number">3.1.</span> <span class="nav-text">Ambiguity in a Sentence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Importance-of-Context"><span class="nav-number">3.2.</span> <span class="nav-text">The Importance of Context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Discourse-Ambiguity"><span class="nav-number">3.3.</span> <span class="nav-text">Discourse Ambiguity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expressions-of-Fuzziness-and-Vagueness"><span class="nav-number">3.4.</span> <span class="nav-text">Expressions of Fuzziness and Vagueness</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Directions"><span class="nav-number">4.</span> <span class="nav-text">Future Directions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-required-synergistic-disciplines"><span class="nav-number">4.1.</span> <span class="nav-text">5 required synergistic disciplines</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xi XIA</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+    <!-- 代码块复制功能 -->
+    <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+    <script type="text/javascript" src="/js/src/clipboard-use.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
